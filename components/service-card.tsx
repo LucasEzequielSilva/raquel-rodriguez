@@ -64,14 +64,7 @@ export function ServiceCard({ translationKey = "services.items.ortodoncia", icon
         </div>
 
         <h3 className="text-lg font-medium mb-2 text-white tracking-tight">{t(`${translationKey}.title`)}</h3>
-        <p className="text-white/70 mb-5 text-sm leading-relaxed">{t(`${translationKey}.description`)}</p>
-        <Link
-          href={href}
-          className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/70 hover:text-white transition-colors duration-200 group/link"
-        >
-          {t("common.learnMore")}
-          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5" />
-        </Link>
+        <p className="text-white/70 text-sm leading-relaxed">{t(`${translationKey}.description`)}</p>
       </div>
     </motion.div>
   )

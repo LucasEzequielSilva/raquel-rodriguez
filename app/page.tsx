@@ -28,6 +28,7 @@ import { HorizontalScroll } from "@/components/horizontal-scroll"
 import { FloatingFooter } from "@/components/floating-footer"
 import { FaqSection } from "@/components/faq-section"
 import Link from "next/link"
+import { MapPin, Phone, Mail, Clock, Instagram, Star } from "lucide-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -75,7 +76,7 @@ export default function Home() {
       <Navbar />
 
       {/* ═══ HERO — Split layout ═══ */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8F9FB]">
+      <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-[#F8F9FB]">
         {/* Animated gradient blob */}
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-teal-400/20 blur-[140px] animate-blob-pulse pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/3 w-[350px] h-[350px] rounded-full bg-blue-300/15 blur-[120px] animate-blob-pulse pointer-events-none" style={{ animationDelay: "3s" }} />
@@ -247,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* ═══ SERVICES — Masonry-like grid ═══ */}
-      <section className="py-28 md:py-36 bg-[#E8ECF0]">
+      <section id="tratamientos" className="py-28 md:py-36 bg-[#E8ECF0]">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
             <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
@@ -272,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* ═══ FIRST VISIT — Timeline/stepper layout ═══ */}
-      <section className="py-28 md:py-36 bg-[#F8F9FB]">
+      <section id="primera-consulta" className="py-28 md:py-36 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
             <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
@@ -318,35 +319,141 @@ export default function Home() {
       {/* ═══ WHY CHOOSE US ═══ */}
       <HorizontalScroll />
 
-      {/* ═══ CONTACT CTA — Decorative background ═══ */}
-      <section className="relative py-28 md:py-36 bg-[#F8F9FB] overflow-hidden">
-        {/* Decorative radial gradient */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(240,253,250,0.8) 0%, rgba(248,249,251,0) 70%)",
-          }}
-        />
-
-        {/* Decorative quote mark */}
-        <div className="absolute top-16 right-8 md:right-20 pointer-events-none">
-          <Quote className="w-32 h-32 text-teal-100/50 rotate-12" strokeWidth={1} />
+      {/* ═══ TESTIMONIOS ═══ */}
+      <section className="py-28 md:py-36 bg-[#F8F9FB]">
+        <div className="container mx-auto px-4 md:px-8">
+          <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+              Testimonios
+            </p>
+            <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
+              Lo que dicen nuestros pacientes
+            </h2>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { name: "María L.", role: "Paciente de Ortodoncia", content: "Excelente profesional. Me explicó todo con claridad desde la primera consulta. Estoy muy contenta con los resultados." },
+              { name: "Carolina R.", role: "Mamá de paciente", content: "Llevé a mi hijo por problemas de mordida y el tratamiento fue impecable. La Dra. Raquel es muy dedicada y profesional." },
+              { name: "Pablo M.", role: "Paciente de Alineadores", content: "Elegí alineadores invisibles y fue la mejor decisión. El seguimiento es constante y los resultados se ven desde el inicio." },
+            ].map((testimonial, i) => (
+              <motion.div
+                key={i}
+                className="p-7 rounded-2xl bg-white border border-[#E0E2E8] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] }}
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-sm text-[#6B6B76] leading-relaxed mb-5">"{testimonial.content}"</p>
+                <div>
+                  <p className="text-sm font-medium text-[#1A1A20]">{testimonial.name}</p>
+                  <p className="text-xs text-[#8A8A94]">{testimonial.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Decorative abstract circle */}
-        <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full border-2 border-teal-100/30 pointer-events-none" />
+      {/* ═══ CONTACTO COMPLETO ═══ */}
+      <section id="contacto" className="relative py-28 md:py-36 bg-[#F0F2F5] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(240,253,250,0.5) 0%, transparent 70%)" }} />
 
         <div className="relative container mx-auto px-4 md:px-8">
-          <motion.div className="max-w-xl" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
+          <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
             <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
               Contacto
             </p>
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
-              {t("contact.title")}
+              {t("contact.description")}
             </h2>
-            <p className="text-[#6B6B76] mb-10 text-base leading-relaxed">{t("contact.description")}</p>
-            <WhatsAppButton size="lg" />
           </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {/* Contact info */}
+            <motion.div
+              className="p-7 rounded-2xl bg-white border border-[#E0E2E8]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-base font-medium text-[#1A1A20] mb-5">Información</h3>
+              <div className="space-y-4">
+                {[
+                  { icon: MapPin, text: "Balcarce Nº 37, 2do Piso, San Salvador de Jujuy" },
+                  { icon: Phone, text: "+54 9 388 578 6946" },
+                  { icon: Mail, text: "draraquelortodoncia@gmail.com" },
+                  { icon: Instagram, text: "@od.rodriguezraquel" },
+                ].map(({ icon: Icon, text }, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 shrink-0">
+                      <Icon className="w-4 h-4 text-teal-500" />
+                    </span>
+                    <p className="text-sm text-[#6B6B76] leading-relaxed pt-1.5">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Horarios */}
+            <motion.div
+              className="p-7 rounded-2xl bg-white border border-[#E0E2E8]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+            >
+              <h3 className="text-base font-medium text-[#1A1A20] mb-5 flex items-center gap-2">
+                <Clock className="w-4 h-4 text-teal-500" /> Horarios de atención
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { day: "Lunes", time: "15 - 20 hs" },
+                  { day: "Martes", time: "8 - 12 hs" },
+                  { day: "Miércoles", time: "15 - 20 hs" },
+                  { day: "Jueves", time: "8 - 12 hs" },
+                  { day: "Viernes", time: "8 - 12 hs" },
+                ].map(({ day, time }, i) => (
+                  <div key={i} className="p-3 rounded-lg bg-[#F5F7FA] border border-[#E0E2E8]">
+                    <p className="text-xs font-medium text-teal-600 uppercase tracking-wider">{day}</p>
+                    <p className="text-sm text-[#4A4A54] mt-0.5">{time}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              className="p-7 rounded-2xl bg-teal-600 text-white flex flex-col justify-between"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.16 }}
+            >
+              <div>
+                <h3 className="text-base font-medium mb-3">¿Querés agendar tu consulta?</h3>
+                <p className="text-sm text-white/70 leading-relaxed mb-6">
+                  Escribinos por WhatsApp y coordinamos tu primera visita. La consulta tiene un valor de $40.000 (efectivo o transferencia).
+                </p>
+              </div>
+              <div className="space-y-3">
+                <a
+                  href="https://wa.me/5493885786946"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white text-teal-700 font-medium text-sm hover:bg-white/90 active:scale-[0.98] transition-all duration-200"
+                >
+                  WhatsApp
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <p className="text-[11px] text-white/40 text-center">Efectivo · Transferencia · Débito/Crédito (Macro) · Planes de cuotas</p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

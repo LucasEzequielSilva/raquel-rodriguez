@@ -29,9 +29,9 @@ export function FloatingFooter({ language: languageProp }: { language?: string }
               <h3 className="text-white/40 text-[11px] font-medium tracking-widest uppercase mb-3">{t("footer.company")}</h3>
               <ul className="space-y-2">
                 {[
-                  { href: "/", label: "Inicio" },
-                  { href: "/servicios", label: t("footer.services") },
-                  { href: "/nosotros", label: t("footer.about") },
+                  { href: "/#inicio", label: "Inicio" },
+                  { href: "/#tratamientos", label: "Tratamientos" },
+                  { href: "/#contacto", label: "Contacto" },
                   { href: "/pacientes", label: "Pacientes" },
                 ].map(({ href, label }) => (
                   <li key={href}>

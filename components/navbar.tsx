@@ -8,11 +8,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useTranslations } from "@/lib/i18n"
 
 const menuItems = [
-  { title: "nav.home", href: "/" },
-  { title: "nav.services", href: "/servicios" },
-  { title: "nav.about", href: "/nosotros" },
-  { title: "nav.patients", href: "/pacientes" },
-  { title: "nav.contact", href: "/contacto" },
+  { title: "Inicio", href: "/#inicio" },
+  { title: "Tratamientos", href: "/#tratamientos" },
+  { title: "Primera Consulta", href: "/#primera-consulta" },
+  { title: "FAQ", href: "/#faq" },
+  { title: "Contacto", href: "/#contacto" },
+  { title: "Pacientes", href: "/pacientes" },
 ]
 
 export function Navbar() {
@@ -32,6 +33,20 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      // If we're on the home page, smooth scroll
+      if (pathname === "/") {
+        e.preventDefault()
+        const id = href.replace("/#", "")
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: "smooth" })
+      }
+      // If we're on another page, let the Link navigate to / then hash
+    }
+    setIsOpen(false)
+  }
+
   return (
     <header className="fixed w-full z-50 px-4 md:px-6 pt-4 transition-all duration-500">
       <nav className={`mx-auto max-w-4xl px-6 md:px-8 py-2.5 flex justify-between items-center rounded-full transition-all duration-500 ${
@@ -43,7 +58,7 @@ export function Navbar() {
           href="/"
           className={`relative z-50 transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`}
         >
-          <span className="text-base font-bold tracking-tight text-[#1A1A18]">
+          <span className="text-base font-bold tracking-tight text-[#1A1A20]">
             Dra. Raquel Rodríguez
           </span>
         </Link>
@@ -51,16 +66,14 @@ export function Navbar() {
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-1">
           {menuItems.map((item) => (
-            <Link
+            <a
               key={item.title}
               href={item.href}
-              className={`
-                text-[13px] px-4 py-2 rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:outline-none
-                ${pathname === item.href ? "text-[#1A1A18] font-medium" : "text-[#1A1A18]/40 hover:text-[#1A1A18]/70"}
-              `}
+              onClick={(e) => handleClick(e, item.href)}
+              className="text-[13px] px-3 py-2 rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:outline-none text-[#1A1A20]/40 hover:text-[#1A1A20]/70"
             >
-              {t(item.title)}
-            </Link>
+              {item.title}
+            </a>
           ))}
         </div>
 
@@ -79,8 +92,8 @@ export function Navbar() {
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {isOpen
-            ? <X size={22} className="text-[#1A1A18]" />
-            : <Menu size={22} className="text-[#1A1A18]" />
+            ? <X size={22} className="text-[#1A1A20]" />
+            : <Menu size={22} className="text-[#1A1A20]" />
           }
         </button>
       </nav>
@@ -103,20 +116,20 @@ export function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + i * 0.06, duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
                   >
-                    <Link
+                    <a
                       href={item.href}
-                      className="text-[2rem] font-medium tracking-tight text-[#1A1A18] hover:text-[#6B6B66] transition-colors duration-200"
-                      onClick={() => setIsOpen(false)}
+                      className="text-[2rem] font-medium tracking-tight text-[#1A1A20] hover:text-[#6B6B76] transition-colors duration-200"
+                      onClick={(e) => handleClick(e, item.href)}
                     >
-                      {t(item.title)}
-                    </Link>
+                      {item.title}
+                    </a>
                   </motion.div>
                 ))}
               </div>
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
                 <a
                   href="https://wa.me/5493885786946"
-                  className="bg-teal-600 text-white px-7 py-3 rounded-full text-base font-medium active:scale-[0.98] transition-all duration-200 border border-teal-500/20 [border-top-color:rgba(255,255,255,0.18)] [border-left-color:rgba(255,255,255,0.10)] [border-bottom-color:rgba(0,0,0,0.10)] [border-right-color:rgba(0,0,0,0.06)] shadow-[inset_0_4px_12px_0_rgba(255,255,255,0.5),inset_0_-4px_12px_0_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.15)] hover:bg-teal-700 brightness-105 hover:brightness-100"
+                  className="bg-teal-600 text-white px-7 py-3 rounded-full text-base font-medium active:scale-[0.98] transition-all duration-200 border border-teal-500/20 shadow-[inset_0_4px_12px_0_rgba(255,255,255,0.5),inset_0_-4px_12px_0_rgba(255,255,255,0.2),inset_0_0_0_1px_rgba(255,255,255,0.15)] hover:bg-teal-700 brightness-105 hover:brightness-100"
                   onClick={() => setIsOpen(false)}
                 >
                   {t("hero.cta")}
