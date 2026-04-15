@@ -208,6 +208,85 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══ DRA. RAQUEL — Perfil profesional ═══ */}
+      <section className="py-28 md:py-36 bg-[#F0F2F5]">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-5xl mx-auto">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+            >
+              <div className="relative overflow-hidden rounded-2xl aspect-[3/4]">
+                <img
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&auto=format&fit=crop&q=80"
+                  alt="Dra. Raquel Rodríguez"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              </div>
+              {/* Decorative accent */}
+              <div className="absolute -bottom-3 -right-3 w-24 h-1 bg-teal-500 rounded-full" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
+            >
+              <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+                Especialista
+              </p>
+              <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-3 text-[#1A1A20]">
+                Dra. Raquel Rodríguez
+              </h2>
+              <p className="text-sm text-teal-600 font-medium mb-6">
+                Ortodoncia y Ortopedia Facial de los Maxilares
+              </p>
+              <div className="space-y-4 text-[#6B6B76] text-base leading-[1.7] mb-8">
+                <p>
+                  Con más de 15 años de experiencia específicos en el área, contamos con una trayectoria consolidada en el diagnóstico y tratamiento de alteraciones dentarias y del crecimiento maxilofacial.
+                </p>
+                <p>
+                  Nuestra práctica se sustenta en la formación continua, con participación en cursos y congresos internacionales que nos permiten incorporar criterios y técnicas actualizadas a cada tratamiento.
+                </p>
+              </div>
+
+              {/* Credentials */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {["Invisalign", "ASIRI", "Keep Smiling"].map((brand) => (
+                  <span key={brand} className="px-3 py-1.5 rounded-full text-xs font-medium border border-[#E0E2E8] text-[#6B6B76] bg-white">
+                    {brand}
+                  </span>
+                ))}
+              </div>
+
+              {/* Stats */}
+              <div className="flex items-center gap-8 pt-6 border-t border-[#E0E2E8]">
+                <div>
+                  <span className="text-2xl font-semibold text-[#1A1A20]">15+</span>
+                  <span className="block text-xs text-[#8A8A94] mt-1">Años de experiencia</span>
+                </div>
+                <div className="w-px h-10 bg-[#E0E2E8]" />
+                <div>
+                  <span className="text-2xl font-semibold text-[#1A1A20]">5 ★</span>
+                  <span className="block text-xs text-[#8A8A94] mt-1">Google Reviews</span>
+                </div>
+                <div className="w-px h-10 bg-[#E0E2E8]" />
+                <div>
+                  <span className="text-2xl font-semibold text-[#1A1A20]">3</span>
+                  <span className="block text-xs text-[#8A8A94] mt-1">Marcas de alineadores</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ FOR WHOM — Numbered horizontal scroll cards ═══ */}
       <section className="py-28 md:py-36 bg-[#F0F2F5]">
         <div className="container mx-auto px-4 md:px-8">
