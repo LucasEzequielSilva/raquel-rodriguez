@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Dental premium palette — clean, luminous, warm */
+    --background: 210 20% 98%;
+    --foreground: 220 15% 8%;
+
+    --card: 210 20% 100%;
+    --card-foreground: 220 15% 8%;
+
+    --popover: 210 20% 100%;
+    --popover-foreground: 220 15% 8%;
+
+    --primary: 220 15% 12%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 210 12% 95%;
+    --secondary-foreground: 220 12% 12%;
+
+    --muted: 210 10% 94%;
+    --muted-foreground: 210 8% 46%;
+
+    --accent: 210 10% 94%;
+    --accent-foreground: 220 12% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 12% 88%;
+    --input: 210 12% 88%;
+    --ring: 220 15% 12%;
+
+    /* Easing */
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Surfaces — elegant dark tones */
+    --dark-bg: #0A0E14;
+    --dark-surface: #111820;
+    --dark-elevated: #1A2230;
+    --dark-border: rgba(200, 220, 240, 0.06);
+    --dark-border-hover: rgba(200, 220, 240, 0.12);
+
+    /* Accent — soft teal for dental */
+    --sage: 180 25% 55%;
+    --sage-subtle: 180 20% 20%;
+  }
+}
+
+@layer components {
+  /* Premium beveled surface */
+  .brand-surface {
+    filter: brightness(1.08);
+    box-shadow:
+      inset 0 1px 0 0 rgba(255,255,255,0.2),
+      inset 0 -1px 0 0 rgba(0,0,0,0.08),
+      0 1px 3px rgba(0,0,0,0.06);
+    transition: all 0.2s var(--ease-out-quart);
+  }
+  .brand-surface:hover {
+    filter: brightness(1);
+    box-shadow:
+      inset 0 1px 0 0 rgba(255,255,255,0.12),
+      inset 0 -1px 0 0 rgba(0,0,0,0.15),
+      0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .brand-surface-dark {
+    box-shadow:
+      inset 0 1px 0 0 rgba(255,255,255,0.08),
+      inset 0 -1px 0 0 rgba(0,0,0,0.25),
+      0 1px 3px rgba(0,0,0,0.2);
+    transition: all 0.2s var(--ease-out-quart);
+  }
+  .brand-surface-dark:hover {
+    box-shadow:
+      inset 0 1px 0 0 rgba(255,255,255,0.05),
+      inset 0 -1px 0 0 rgba(0,0,0,0.35),
+      0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  /* Icon beveled look */
+  .icon-bevel {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.1),
+      inset 0 -1px 0 rgba(0,0,0,0.2),
+      0 2px 6px rgba(0,0,0,0.25);
+    filter: brightness(1.08);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-x: hidden; scrollbar-width: none; }
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+}
+
+/* Scrollbar */
+.scrollbar-thin { scrollbar-width: thin; scrollbar-color: hsl(var(--border)) transparent; }
+.scrollbar-thin::-webkit-scrollbar { width: 5px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background-color: hsl(var(--border)); border-radius: 3px; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Subtle glass morphism for cards */
+.glass-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Decorative gradient blob */
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Premium text shadow for headings on dark backgrounds */
+.text-shadow-soft {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Subtle pattern background */
+.bg-dots {
+  background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Dental-specific accent border */
+.accent-border-top {
+  border-top: 3px solid;
+  border-image: linear-gradient(to right, #0d9488, #14b8a6, #5eead4) 1;
+}
+
+/* Smooth image reveal */
+.img-reveal {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(13, 148, 136, 0.15);
+  color: #1A1A20;
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
