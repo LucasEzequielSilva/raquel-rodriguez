@@ -77,9 +77,45 @@ export default function Home() {
 
       {/* ═══ HERO — Split layout ═══ */}
       <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-[#F8F9FB]">
-        {/* Animated gradient blob */}
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-teal-400/20 blur-[140px] animate-blob-pulse pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/3 w-[350px] h-[350px] rounded-full bg-blue-300/15 blur-[120px] animate-blob-pulse pointer-events-none" style={{ animationDelay: "3s" }} />
+        {/* Teal gradient top → transparent */}
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            background: "linear-gradient(to bottom, rgba(13,148,136,0.08) 0%, rgba(13,148,136,0.03) 30%, transparent 60%)",
+          }}
+        />
+
+        {/* Diagonal light rays */}
+        <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
+          <div
+            className="absolute -top-[20%] -left-[10%] w-[50%] h-[140%] opacity-[0.05]"
+            style={{
+              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.8) 46%, rgba(255,255,255,0.6) 50%, rgba(13,148,136,0.8) 54%, transparent 75%)",
+              transform: "rotate(-15deg)",
+            }}
+          />
+          <div
+            className="absolute -top-[20%] left-[15%] w-[40%] h-[140%] opacity-[0.04]"
+            style={{
+              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.6) 46%, rgba(255,255,255,0.5) 50%, rgba(13,148,136,0.6) 54%, transparent 75%)",
+              transform: "rotate(-15deg)",
+            }}
+          />
+          <div
+            className="absolute -top-[20%] left-[40%] w-[35%] h-[140%] opacity-[0.03]"
+            style={{
+              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.5) 46%, rgba(255,255,255,0.4) 50%, rgba(13,148,136,0.5) 54%, transparent 75%)",
+              transform: "rotate(-15deg)",
+            }}
+          />
+          <div
+            className="absolute -top-[20%] left-[60%] w-[45%] h-[140%] opacity-[0.02]"
+            style={{
+              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.4) 46%, rgba(255,255,255,0.3) 50%, rgba(13,148,136,0.4) 54%, transparent 75%)",
+              transform: "rotate(-15deg)",
+            }}
+          />
+        </div>
 
         <div className="relative z-20 container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
