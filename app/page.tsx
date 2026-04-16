@@ -159,10 +159,6 @@ export default function Home() {
 
             {/* Right — Image with decorative accent */}
             <div className="hero-image opacity-0 relative hidden lg:block">
-              {/* Decorative teal dot behind image */}
-              <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-teal-400/30 blur-sm" />
-              <div className="absolute -bottom-4 -right-4 w-14 h-14 rounded-full bg-teal-500/20" />
-
               <div className="relative">
                 <img
                   src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&auto=format&fit=crop&q=80"
