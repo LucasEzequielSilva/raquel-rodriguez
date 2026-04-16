@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Raquel Rodriguez - OG Image</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
+    background: #F8F9FB;
+  }
+
+  /* Teal gradient top */
+  .gradient-top {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(13,148,136,0.1) 0%, rgba(13,148,136,0.03) 35%, transparent 65%);
+  }
+
+  /* Diagonal light rays */
+  .rays { position: absolute; inset: 0; overflow: hidden; }
+  .ray {
+    position: absolute;
+    top: -30%;
+    height: 160%;
+    transform: rotate(-15deg);
+  }
+  .ray-1 { left: -5%; width: 50%; opacity: 0.07; background: linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.8) 46%, rgba(255,255,255,0.6) 50%, rgba(13,148,136,0.8) 54%, transparent 75%); }
+  .ray-2 { left: 20%; width: 40%; opacity: 0.05; background: linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.6) 46%, rgba(255,255,255,0.5) 50%, rgba(13,148,136,0.6) 54%, transparent 75%); }
+  .ray-3 { left: 50%; width: 30%; opacity: 0.035; background: linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.5) 46%, rgba(255,255,255,0.4) 50%, rgba(13,148,136,0.5) 54%, transparent 75%); }
+  .ray-4 { left: 70%; width: 35%; opacity: 0.025; background: linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.4) 46%, rgba(255,255,255,0.3) 50%, rgba(13,148,136,0.4) 54%, transparent 75%); }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 80px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #0d9488;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0d9488;
+  }
+
+  .title {
+    font-size: 56px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+    color: #1A1A20;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    color: #6B6B76;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 100px;
+    background: #0d9488;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .name {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A1A20;
+    letter-spacing: -0.02em;
+  }
+
+  .spec {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    font-size: 12px;
+    color: #8A8A94;
+  }
+</style>
+</head>
+<body>
+
+  <div class="gradient-top"></div>
+  <div class="rays">
+    <div class="ray ray-1"></div>
+    <div class="ray ray-2"></div>
+    <div class="ray ray-3"></div>
+    <div class="ray ray-4"></div>
+  </div>
+
+  <div class="content">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Ortodoncia &middot; Ortopedia Facial
+    </div>
+    <div class="title">Transformá tu sonrisa con un<br>tratamiento personalizado</div>
+    <div class="subtitle">Diagnóstico preciso, planificación individual y seguimiento profesional para niños, adolescentes y adultos.</div>
+    <div class="cta">Reservar consulta &rarr;</div>
+  </div>
+
+  <div class="name">Dra. Raquel Rodríguez</div>
+  <div class="spec">San Salvador de Jujuy</div>
+
+</body>
+</html>
