@@ -161,8 +161,8 @@ export default function Home() {
             <div className="hero-image opacity-0 relative hidden lg:block">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&auto=format&fit=crop&q=80"
-                  alt="Sonrisa saludable"
+                  src="/raquel.png"
+                  alt="Dra. Raquel Rodríguez - Ortodoncia y Ortopedia Facial"
                   className="w-full h-[520px] object-cover rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
                   loading="eager"
                 />
@@ -253,8 +253,8 @@ export default function Home() {
             >
               <div className="relative overflow-hidden rounded-2xl aspect-[3/4]">
                 <img
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&auto=format&fit=crop&q=80"
-                  alt="Dra. Raquel Rodríguez"
+                  src="/raquel.png"
+                  alt="Dra. Raquel Rodríguez - Especialista en Ortodoncia"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
