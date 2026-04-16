@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://raquelrodriguez.com.ar/sitemap.xml
