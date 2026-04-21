@@ -22,7 +22,7 @@ const defaultImages: Record<string, string> = {
   alineadores: "/clinic/alineadores.jpg",
   ninos: "/clinic/ninos.jpg",
   adultos: "/clinic/adultos.jpg",
-  diagnostico: "/clinic/planificacion.jpg",
+  diagnostico: "/clinic/diagnostico-servicio.jpg",
 }
 
 const getDefaultImage = (key?: string) => {
