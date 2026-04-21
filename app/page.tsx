@@ -38,7 +38,7 @@ const HighlightMark: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   return (
     <span className="relative inline-block px-1">
       <svg
-        className="absolute inset-x-0 bottom-[2%] w-full h-[46%] pointer-events-none"
+        className="absolute inset-x-0 -bottom-[6%] w-full h-[38%] pointer-events-none"
         viewBox="0 0 100 20"
         preserveAspectRatio="none"
         aria-hidden="true"
