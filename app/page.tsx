@@ -110,9 +110,9 @@ export default function Home() {
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
             <div className="max-w-2xl">
-              <h1 className="hero-title opacity-0 font-serif text-[clamp(2.5rem,5.5vw,4.5rem)] font-medium tracking-tight leading-[1.02] text-white mb-5" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100" }}>
-                <span className="italic text-brand-pink-lace">Ortodoncia</span> y{" "}
-                <span className="italic text-brand-pink-lace">Ortopedia Facial</span>{" "}
+              <h1 className="hero-title opacity-0 text-[clamp(2.25rem,5vw,4rem)] font-medium tracking-tighter leading-[1.05] text-white mb-5">
+                <span className="text-brand-pink-lace">Ortodoncia</span> y{" "}
+                <span className="text-brand-pink-lace">Ortopedia Facial</span>{" "}
                 para todas las edades.
               </h1>
               <p className="hero-sub opacity-0 text-white/80 max-w-lg text-base leading-relaxed">
