@@ -142,7 +142,7 @@ export default function Home() {
               {t("hero.open")}
             </span>
             <a
-              href="https://www.google.com/search?q=Dra.+Raquel+Rodriguez+Ortodoncia+Jujuy+Balcarce"
+              href="https://share.google/eRdYtwnM2E5wfeyc7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/25 hover:bg-white/15 hover:border-white/40 transition-all duration-200 group"
