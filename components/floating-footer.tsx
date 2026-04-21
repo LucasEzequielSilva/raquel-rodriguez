@@ -80,7 +80,6 @@ export function FloatingFooter({ language: languageProp }: { language?: string }
               <ChevronUp className="w-3.5 h-3.5" />
               Volver arriba
             </button>
-            <div className="text-[11px] text-white/20">Hecho con Nexora</div>
           </div>
         </div>
 
