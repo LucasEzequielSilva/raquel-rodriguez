@@ -1,3 +1,5 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -156,10 +158,10 @@
   background-size: 24px 24px;
 }
 
-/* Dental-specific accent border */
+/* Brand accent border */
 .accent-border-top {
   border-top: 3px solid;
-  border-image: linear-gradient(to right, #0d9488, #14b8a6, #5eead4) 1;
+  border-image: linear-gradient(to right, #150B29, #7F7594, #D9C7FF) 1;
 }
 
 /* Smooth image reveal */
@@ -170,8 +172,8 @@
 
 /* Selection color */
 ::selection {
-  background: rgba(13, 148, 136, 0.15);
-  color: #1A1A20;
+  background: rgba(217, 199, 255, 0.45);
+  color: #150B29;
 }
 
 /* Lenis smooth scroll */

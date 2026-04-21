@@ -23,12 +23,13 @@ import {
   ArrowRight,
   Users,
   Quote,
-} from "lucide-react"
+} from "@/components/icons"
 import { HorizontalScroll } from "@/components/horizontal-scroll"
 import { FloatingFooter } from "@/components/floating-footer"
 import { FaqSection } from "@/components/faq-section"
+import { AnimatedCountUp, AnimatedStars } from "@/components/animated-stats"
 import Link from "next/link"
-import { MapPin, Phone, Mail, Clock, Instagram, Star } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Instagram, Star } from "@/components/icons"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -61,10 +62,10 @@ export default function Home() {
   ]
 
   const features = [
-    { icon: Search, label: t("about.features.diagnosis"), image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&auto=format&fit=crop&q=60" },
-    { icon: Target, label: t("about.features.planning"), image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&auto=format&fit=crop&q=60" },
-    { icon: GraduationCap, label: t("about.features.certified"), image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&auto=format&fit=crop&q=60" },
-    { icon: HeartHandshake, label: t("about.features.followup"), image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&auto=format&fit=crop&q=60" },
+    { icon: Search, label: t("about.features.diagnosis"), image: "/clinic/diagnostico.jpg" },
+    { icon: Target, label: t("about.features.planning"), image: "/clinic/planificacion.jpg" },
+    { icon: GraduationCap, label: t("about.features.certified"), image: "/clinic/formacion.jpg" },
+    { icon: HeartHandshake, label: t("about.features.followup"), image: "/clinic/seguimiento.jpg" },
   ]
 
   const forWhomItems = t("forWhom.items") as unknown as string[]
@@ -75,100 +76,49 @@ export default function Home() {
     <div className="min-h-screen bg-[#F8F9FB]">
       <Navbar />
 
-      {/* ═══ HERO — Split layout ═══ */}
-      <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden bg-[#F8F9FB]">
-        {/* Teal gradient top → transparent */}
-        <div
-          className="absolute inset-0 z-[1] pointer-events-none"
-          style={{
-            background: "linear-gradient(to bottom, rgba(13,148,136,0.08) 0%, rgba(13,148,136,0.03) 30%, transparent 60%)",
-          }}
+      {/* ═══ HERO — Full-bleed video ═══ */}
+      <section id="inicio" className="relative min-h-screen flex items-end overflow-hidden bg-brand-eerie-black">
+        {/* Animated WebP background (smoother decode than MP4) */}
+        <img
+          src="/hero-raquel.webp?v=4"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
         />
 
-        {/* Diagonal light rays */}
-        <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
-          <div
-            className="absolute -top-[20%] -left-[10%] w-[50%] h-[140%] opacity-[0.05]"
-            style={{
-              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.8) 46%, rgba(255,255,255,0.6) 50%, rgba(13,148,136,0.8) 54%, transparent 75%)",
-              transform: "rotate(-15deg)",
-            }}
-          />
-          <div
-            className="absolute -top-[20%] left-[15%] w-[40%] h-[140%] opacity-[0.04]"
-            style={{
-              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.6) 46%, rgba(255,255,255,0.5) 50%, rgba(13,148,136,0.6) 54%, transparent 75%)",
-              transform: "rotate(-15deg)",
-            }}
-          />
-          <div
-            className="absolute -top-[20%] left-[40%] w-[35%] h-[140%] opacity-[0.03]"
-            style={{
-              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.5) 46%, rgba(255,255,255,0.4) 50%, rgba(13,148,136,0.5) 54%, transparent 75%)",
-              transform: "rotate(-15deg)",
-            }}
-          />
-          <div
-            className="absolute -top-[20%] left-[60%] w-[45%] h-[140%] opacity-[0.02]"
-            style={{
-              background: "linear-gradient(115deg, transparent 25%, rgba(13,148,136,0.4) 46%, rgba(255,255,255,0.3) 50%, rgba(13,148,136,0.4) 54%, transparent 75%)",
-              transform: "rotate(-15deg)",
-            }}
-          />
-        </div>
+        {/* Legibility overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-eerie-black/85 via-brand-eerie-black/30 to-brand-eerie-black/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-eerie-black/50 via-transparent to-transparent pointer-events-none" />
 
-        <div className="relative z-20 container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left — Text */}
-            <div className="max-w-xl pt-24 lg:pt-0">
-              <div className="hero-badge opacity-0 mb-4">
-                <span className="inline-flex items-center gap-2 text-[13px] text-[#8A8A94] tracking-wide">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-                  {t("hero.schedule")}{" "}
-                  {new Date().toLocaleString("es-ES", { month: "long" }).toUpperCase()}{" "}
-                  {t("hero.open")}
-                </span>
-              </div>
+        <div className="relative z-10 w-full container mx-auto px-4 md:px-8 pb-14 md:pb-20 pt-32">
+          <div className="hero-badge opacity-0 mb-8 md:mb-12">
+            <span className="inline-flex items-center gap-2 text-[13px] text-white/85 tracking-wide font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-pale-lavender animate-pulse" />
+              {t("hero.schedule")}{" "}
+              {new Date().toLocaleString("es-ES", { month: "long" }).toUpperCase()}{" "}
+              {t("hero.open")}
+            </span>
+          </div>
 
-              <h1
-                className="hero-title opacity-0 text-[clamp(2rem,4.5vw,3rem)] font-medium tracking-tighter leading-[1.2] mb-3 max-w-2xl text-[#1A1A20]"
-                style={{
-                  maskImage: "repeating-linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,1) 55%, rgba(0,0,0,1) 100%)",
-                  maskSize: "100% 1.2em",
-                  WebkitMaskImage: "repeating-linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,1) 55%, rgba(0,0,0,1) 100%)",
-                  WebkitMaskSize: "100% 1.2em",
-                }}
-              >
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
+            <div className="max-w-2xl">
+              <h1 className="hero-title opacity-0 text-[clamp(2.25rem,5vw,4rem)] font-medium tracking-tighter leading-[1.05] text-white mb-5">
                 {t("hero.title")}
               </h1>
-              <p className="hero-sub opacity-0 text-[#6B6B76] mb-8 max-w-md text-base leading-relaxed">
+              <p className="hero-sub opacity-0 text-white/80 max-w-lg text-base leading-relaxed">
                 {t("hero.subtitle")}
               </p>
-
-              <div className="hero-cta opacity-0 flex flex-col sm:flex-row gap-3">
-                <WhatsAppButton variant="hero" />
-                <Link
-                  href="/pacientes"
-                  className="inline-flex items-center justify-center gap-2 rounded-full font-medium text-[13px] px-6 py-3 bg-white text-[#1A1A20] border border-[#E0E2E8] hover:border-[#D0D2D8] hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] active:scale-[0.98] transition-all duration-200"
-                >
-                  {t("hero.ctaPatients")}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
             </div>
 
-            {/* Right — Image with decorative accent */}
-            <div className="hero-image opacity-0 relative hidden lg:block">
-              <div className="relative">
-                <img
-                  src="/raquel.png"
-                  alt="Dra. Raquel Rodríguez - Ortodoncia y Ortopedia Facial"
-                  className="w-full h-[520px] object-cover rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.1)]"
-                  loading="eager"
-                />
-                {/* Subtle overlay gradient */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-              </div>
+            <div className="hero-cta opacity-0 flex flex-col sm:flex-row gap-3 lg:flex-shrink-0">
+              <WhatsAppButton variant="hero" size="lg" />
+              <Link
+                href="/pacientes"
+                className="inline-flex items-center justify-center gap-2 rounded-full font-medium text-[15px] px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/30 hover:bg-white/20 hover:border-white/60 active:scale-[0.98] transition-all duration-200"
+              >
+                {t("hero.ctaPatients")}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
@@ -180,7 +130,7 @@ export default function Home() {
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
             <div className="md:col-span-7">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
-                <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+                <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
                   Sobre mí
                 </p>
                 <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-6 text-[#1A1A20]">
@@ -196,20 +146,15 @@ export default function Home() {
                 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
                 variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
               >
-                {[
-                  { value: "15+", label: t("about.stats.years") },
-                  null,
-                  { value: "5★", label: "Calificación Google" },
-                ].map((item, i) =>
-                  item === null ? (
-                    <div key={i} className="w-px h-14 bg-[#D4D6DC]" />
-                  ) : (
-                    <motion.div key={i} variants={fadeIn}>
-                      <p className="text-4xl font-semibold tracking-tight text-[#1A1A20]">{item.value}</p>
-                      <p className="text-sm mt-1 text-[#8A8A94]">{item.label}</p>
-                    </motion.div>
-                  )
-                )}
+                <motion.div variants={fadeIn}>
+                  <AnimatedCountUp to={15} suffix="+" className="text-4xl" />
+                  <p className="text-sm mt-1 text-brand-rhythm">{t("about.stats.years")}</p>
+                </motion.div>
+                <div className="w-px h-14 bg-brand-pale-lavender/50" />
+                <motion.div variants={fadeIn}>
+                  <AnimatedStars count={5} size={26} />
+                  <p className="text-sm mt-2 text-brand-rhythm">Calificación Google</p>
+                </motion.div>
               </motion.div>
             </div>
 
@@ -260,8 +205,6 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
-              {/* Decorative accent */}
-              <div className="absolute -bottom-3 -right-3 w-24 h-1 bg-teal-500 rounded-full" />
             </motion.div>
 
             <motion.div
@@ -270,13 +213,13 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
             >
-              <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+              <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
                 Especialista
               </p>
               <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-3 text-[#1A1A20]">
                 Dra. Raquel Rodríguez
               </h2>
-              <p className="text-sm text-teal-600 font-medium mb-6">
+              <p className="text-sm text-brand-rhythm font-medium mb-6">
                 Ortodoncia y Ortopedia Facial de los Maxilares
               </p>
               <div className="space-y-4 text-[#6B6B76] text-base leading-[1.7] mb-8">
@@ -298,20 +241,20 @@ export default function Home() {
               </div>
 
               {/* Stats */}
-              <div className="flex items-center gap-8 pt-6 border-t border-[#E0E2E8]">
+              <div className="flex items-center gap-8 pt-6 border-t border-brand-pale-lavender/40">
                 <div>
-                  <span className="text-2xl font-semibold text-[#1A1A20]">15+</span>
-                  <span className="block text-xs text-[#8A8A94] mt-1">Años de experiencia</span>
+                  <AnimatedCountUp to={15} suffix="+" className="text-2xl" />
+                  <span className="block text-xs text-brand-rhythm mt-1">Años de experiencia</span>
                 </div>
-                <div className="w-px h-10 bg-[#E0E2E8]" />
+                <div className="w-px h-10 bg-brand-pale-lavender/50" />
                 <div>
-                  <span className="text-2xl font-semibold text-[#1A1A20]">5 ★</span>
-                  <span className="block text-xs text-[#8A8A94] mt-1">Google Reviews</span>
+                  <AnimatedStars count={5} size={18} />
+                  <span className="block text-xs text-brand-rhythm mt-2">Google Reviews</span>
                 </div>
-                <div className="w-px h-10 bg-[#E0E2E8]" />
+                <div className="w-px h-10 bg-brand-pale-lavender/50" />
                 <div>
-                  <span className="text-2xl font-semibold text-[#1A1A20]">3</span>
-                  <span className="block text-xs text-[#8A8A94] mt-1">Marcas de alineadores</span>
+                  <AnimatedCountUp to={3} className="text-2xl" />
+                  <span className="block text-xs text-brand-rhythm mt-1">Marcas de alineadores</span>
                 </div>
               </div>
             </motion.div>
@@ -323,7 +266,7 @@ export default function Home() {
       <section className="py-28 md:py-36 bg-[#F0F2F5]">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div className="max-w-2xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
               Identificá tu caso
             </p>
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-12 text-[#1A1A20]">
@@ -336,22 +279,25 @@ export default function Home() {
             {forWhomItems.map((item: string, i: number) => (
               <motion.div
                 key={i}
-                className="group relative flex-shrink-0 w-[280px] md:w-auto snap-start p-6 rounded-2xl bg-white border border-[#E0E2E8] hover:border-teal-300 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, transparent 0%, transparent 100%)",
-                }}
+                className="group relative flex-shrink-0 w-[280px] md:w-auto snap-start p-6 rounded-2xl bg-white border border-brand-pale-lavender/40 hover:border-brand-pale-lavender transition-all duration-300 hover:shadow-[0_12px_36px_rgba(217,199,255,0.45)] overflow-hidden"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] }}
-                whileHover={{
-                  backgroundImage: "linear-gradient(135deg, rgba(20,184,166,0.03) 0%, rgba(20,184,166,0.08) 100%)",
-                }}
               >
-                <span className="block text-[4rem] font-bold leading-none tracking-tighter text-[#1A1A20]/[0.05] select-none mb-4">
+                <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
+                <span
+                  className="block text-[4rem] font-bold leading-none tracking-tighter select-none mb-4"
+                  style={{
+                    backgroundImage: "linear-gradient(135deg, #D9C7FF, #7F7594)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-sm text-[#4A4A54] leading-relaxed">{item}</p>
+                <p className="text-sm text-brand-rhythm leading-relaxed">{item}</p>
               </motion.div>
             ))}
           </div>
@@ -362,7 +308,7 @@ export default function Home() {
       <section id="tratamientos" className="py-28 md:py-36 bg-[#E8ECF0]">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
               Tratamientos
             </p>
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
@@ -387,7 +333,7 @@ export default function Home() {
       <section id="primera-consulta" className="py-28 md:py-36 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
               Tu primera visita
             </p>
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
@@ -408,11 +354,11 @@ export default function Home() {
               >
                 {/* Timeline column — circle + dashed line */}
                 <div className="flex flex-col items-center flex-shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center text-sm font-semibold shadow-[0_4px_12px_rgba(20,184,166,0.3)]">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-lavender to-brand-pale-lavender text-brand-eerie-black flex items-center justify-center text-sm font-bold border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_6px_18px_rgba(217,199,255,0.55)]">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   {i < firstVisitSteps.length - 1 && (
-                    <div className="flex-1 w-px border-l-2 border-dashed border-teal-200 mt-3" />
+                    <div className="flex-1 w-px border-l-2 border-dashed border-brand-pale-lavender mt-3" />
                   )}
                 </div>
 
@@ -434,7 +380,7 @@ export default function Home() {
       <section className="py-28 md:py-36 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-8">
           <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
               Testimonios
             </p>
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
@@ -449,21 +395,22 @@ export default function Home() {
             ].map((testimonial, i) => (
               <motion.div
                 key={i}
-                className="p-7 rounded-2xl bg-white border border-[#E0E2E8] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300"
+                className="relative p-7 rounded-2xl bg-white border border-brand-pale-lavender/30 hover:border-brand-pale-lavender hover:shadow-[0_12px_36px_rgba(217,199,255,0.45)] transition-all duration-300 overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] }}
               >
+                <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm text-[#6B6B76] leading-relaxed mb-5">"{testimonial.content}"</p>
+                <p className="text-sm text-brand-rhythm leading-relaxed mb-5">"{testimonial.content}"</p>
                 <div>
-                  <p className="text-sm font-medium text-[#1A1A20]">{testimonial.name}</p>
-                  <p className="text-xs text-[#8A8A94]">{testimonial.role}</p>
+                  <p className="text-sm font-semibold text-brand-eerie-black">{testimonial.name}</p>
+                  <p className="text-xs text-brand-rhythm/70">{testimonial.role}</p>
                 </div>
               </motion.div>
             ))}
@@ -473,11 +420,11 @@ export default function Home() {
 
       {/* ═══ CONTACTO COMPLETO ═══ */}
       <section id="contacto" className="relative py-28 md:py-36 bg-[#F0F2F5] overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(240,253,250,0.5) 0%, transparent 70%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(233,222,255,0.4) 0%, transparent 70%)" }} />
 
         <div className="relative container mx-auto px-4 md:px-8">
           <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
               Contacto
             </p>
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
@@ -488,13 +435,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {/* Contact info */}
             <motion.div
-              className="p-7 rounded-2xl bg-white border border-[#E0E2E8]"
+              className="relative p-7 rounded-2xl bg-white border border-brand-pale-lavender/30 hover:border-brand-pale-lavender hover:shadow-[0_12px_36px_rgba(217,199,255,0.4)] transition-all duration-300 overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-base font-medium text-[#1A1A20] mb-5">Información</h3>
+              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
+              <h3 className="text-base font-semibold text-brand-eerie-black mb-5">Información</h3>
               <div className="space-y-4">
                 {[
                   { icon: MapPin, text: "Balcarce Nº 37, 2do Piso, San Salvador de Jujuy" },
@@ -503,10 +451,10 @@ export default function Home() {
                   { icon: Instagram, text: "@od.rodriguezraquel" },
                 ].map(({ icon: Icon, text }, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 shrink-0">
-                      <Icon className="w-4 h-4 text-teal-500" />
+                    <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-lavender to-brand-pale-lavender border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] shrink-0">
+                      <Icon className="w-4 h-4 text-brand-eerie-black" />
                     </span>
-                    <p className="text-sm text-[#6B6B76] leading-relaxed pt-1.5">{text}</p>
+                    <p className="text-sm text-brand-rhythm leading-relaxed pt-2">{text}</p>
                   </div>
                 ))}
               </div>
@@ -514,14 +462,15 @@ export default function Home() {
 
             {/* Horarios */}
             <motion.div
-              className="p-7 rounded-2xl bg-white border border-[#E0E2E8]"
+              className="relative p-7 rounded-2xl bg-white border border-brand-pale-lavender/30 hover:border-brand-pale-lavender hover:shadow-[0_12px_36px_rgba(217,199,255,0.4)] transition-all duration-300 overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.08 }}
             >
-              <h3 className="text-base font-medium text-[#1A1A20] mb-5 flex items-center gap-2">
-                <Clock className="w-4 h-4 text-teal-500" /> Horarios de atención
+              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
+              <h3 className="text-base font-semibold text-brand-eerie-black mb-5 flex items-center gap-2">
+                <Clock className="w-4 h-4 text-brand-eerie-black" /> Horarios de atención
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -532,7 +481,7 @@ export default function Home() {
                   { day: "Viernes", time: "8 - 12 hs" },
                 ].map(({ day, time }, i) => (
                   <div key={i} className="p-3 rounded-lg bg-[#F5F7FA] border border-[#E0E2E8]">
-                    <p className="text-xs font-medium text-teal-600 uppercase tracking-wider">{day}</p>
+                    <p className="text-xs font-medium text-brand-rhythm uppercase tracking-wider">{day}</p>
                     <p className="text-sm text-[#4A4A54] mt-0.5">{time}</p>
                   </div>
                 ))}
@@ -541,27 +490,28 @@ export default function Home() {
 
             {/* CTA */}
             <motion.div
-              className="p-7 rounded-2xl bg-teal-600 text-white flex flex-col justify-between"
+              className="relative p-7 rounded-2xl bg-brand-pale-lavender text-brand-eerie-black flex flex-col justify-between overflow-hidden shadow-[0_12px_40px_rgba(217,199,255,0.6)]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.16 }}
             >
+              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
               <div>
                 <h3 className="text-base font-medium mb-3">¿Querés agendar tu consulta?</h3>
-                <p className="text-sm text-white/70 leading-relaxed mb-6">
+                <p className="text-sm text-brand-eerie-black/70 leading-relaxed mb-6">
                   Escribinos por WhatsApp y coordinamos tu primera visita. La consulta tiene un valor de $40.000 (efectivo o transferencia).
                 </p>
               </div>
               <div className="space-y-3">
                 <a
                   href="https://wa.me/5493885786946"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white text-teal-700 font-medium text-sm hover:bg-white/90 active:scale-[0.98] transition-all duration-200"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-eerie-black text-white font-semibold text-sm hover:bg-black active:scale-[0.98] transition-all duration-200"
                 >
                   WhatsApp
                   <ArrowRight className="w-4 h-4" />
                 </a>
-                <p className="text-[11px] text-white/40 text-center">Efectivo · Transferencia · Débito/Crédito (Macro) · Planes de cuotas</p>
+                <p className="text-[11px] text-brand-eerie-black/50 text-center">Efectivo · Transferencia · Débito/Crédito (Macro) · Planes de cuotas</p>
               </div>
             </motion.div>
           </div>

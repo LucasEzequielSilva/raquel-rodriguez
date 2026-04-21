@@ -42,7 +42,7 @@ export function ServiceFeature({ title, description, features, image, index }: S
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
-                <div className="mt-1 bg-teal-600 p-1 rounded-full flex-shrink-0">
+                <div className="mt-1 bg-brand-eerie-black p-1 rounded-full flex-shrink-0">
                   <Check className="w-3 h-3 text-white" />
                 </div>
                 <span className="text-[#3A3A40] text-sm">{feature}</span>

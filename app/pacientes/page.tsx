@@ -21,7 +21,7 @@ import {
   Wrench,
   Droplets,
   Siren,
-} from "lucide-react"
+} from "@/components/icons"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const fadeIn = {
@@ -48,7 +48,7 @@ export default function PacientesPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-36 pb-20 overflow-hidden" style={{ background: "linear-gradient(180deg, rgba(240,253,250,0.5) 0%, #F5F7FA 100%)" }}>
+      <section className="relative pt-36 pb-20 overflow-hidden" style={{ background: "linear-gradient(180deg, rgba(233,222,255,0.5) 0%, #F5F7FA 100%)" }}>
         {/* Decorative SVG background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <svg
@@ -62,13 +62,13 @@ export default function PacientesPage() {
               d="M100 20C75 20 60 35 55 55C50 75 45 85 35 95C25 105 20 120 25 140C30 160 45 175 60 175C70 175 75 165 80 155C85 145 90 140 100 140C110 140 115 145 120 155C125 165 130 175 140 175C155 175 170 160 175 140C180 120 175 105 165 95C155 85 150 75 145 55C140 35 125 20 100 20Z"
               stroke="currentColor"
               strokeWidth="3"
-              className="text-teal-600"
+              className="text-brand-rhythm"
             />
             <path
               d="M70 55C80 65 90 68 100 68C110 68 120 65 130 55"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-teal-600"
+              className="text-brand-rhythm"
             />
           </svg>
           <svg
@@ -82,26 +82,26 @@ export default function PacientesPage() {
               d="M0 100C50 80 100 120 150 100C200 80 250 120 300 100C350 80 400 120 450 100C500 80 550 120 600 100"
               stroke="currentColor"
               strokeWidth="4"
-              className="text-teal-500"
+              className="text-brand-eerie-black"
             />
             <path
               d="M0 140C50 120 100 160 150 140C200 120 250 160 300 140C350 120 400 160 450 140C500 120 550 160 600 140"
               stroke="currentColor"
               strokeWidth="3"
-              className="text-teal-500"
+              className="text-brand-eerie-black"
             />
             <path
               d="M0 60C50 40 100 80 150 60C200 40 250 80 300 60C350 40 400 80 450 60C500 40 550 80 600 60"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-teal-500"
+              className="text-brand-eerie-black"
             />
           </svg>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <motion.div className="max-w-2xl" initial="hidden" animate="visible" variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
               Pacientes en tratamiento
             </p>
             <h1 className="text-2xl md:text-3xl tracking-tight text-[#1A1A20] font-medium mb-6 leading-[1.1]">
@@ -138,16 +138,16 @@ export default function PacientesPage() {
                 <motion.a
                   key={i}
                   href={`#${item.anchor}`}
-                  className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-white border border-[#E0E2E8] hover:border-teal-300 hover:shadow-[0_4px_20px_rgba(13,148,136,0.1)] transition-all duration-200 text-center group"
+                  className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-white border border-[#E0E2E8] hover:border-brand-pale-lavender hover:shadow-[0_4px_20px_rgba(217,199,255,0.3)] transition-all duration-200 text-center group"
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-200">
-                    <Icon className="w-5 h-5 text-teal-600" />
+                  <div className="w-12 h-12 rounded-xl bg-brand-lavender/40 flex items-center justify-center group-hover:bg-brand-pale-lavender transition-colors duration-200">
+                    <Icon className="w-5 h-5 text-brand-rhythm" />
                   </div>
-                  <span className="text-sm font-medium text-[#4A4A54] group-hover:text-teal-700 transition-colors duration-200">
+                  <span className="text-sm font-medium text-[#4A4A54] group-hover:text-brand-eerie-black transition-colors duration-200">
                     {item.title}
                   </span>
                 </motion.a>
@@ -161,7 +161,7 @@ export default function PacientesPage() {
       <section id="brackets" className="py-20 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">Brackets</p>
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">Brackets</p>
             <h2 className="text-2xl font-medium text-[#1A1A20] mb-8">{t("patients.brackets.title")}</h2>
           </motion.div>
           <Accordion type="single" collapsible className="space-y-2">
@@ -169,7 +169,7 @@ export default function PacientesPage() {
               <AccordionItem
                 key={i}
                 value={`brackets-${i}`}
-                className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-teal-200 data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+                className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-brand-pale-lavender data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
               >
                 <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
                   {item.title}
@@ -187,7 +187,7 @@ export default function PacientesPage() {
       <section id="alineadores" className="py-20 bg-[#F0F2F5]">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">Alineadores</p>
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">Alineadores</p>
             <h2 className="text-2xl font-medium text-[#1A1A20] mb-8">{t("patients.alineadores.title")}</h2>
           </motion.div>
           <Accordion type="single" collapsible className="space-y-2">
@@ -195,7 +195,7 @@ export default function PacientesPage() {
               <AccordionItem
                 key={i}
                 value={`alineadores-${i}`}
-                className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-teal-200 data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+                className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-brand-pale-lavender data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
               >
                 <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
                   {item.title}
@@ -213,7 +213,7 @@ export default function PacientesPage() {
       <section className="py-20 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">Ortopedia</p>
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">Ortopedia</p>
             <h2 className="text-2xl font-medium text-[#1A1A20] mb-8">{t("patients.ortopedia.title")}</h2>
           </motion.div>
           <Accordion type="single" collapsible className="space-y-2">
@@ -221,7 +221,7 @@ export default function PacientesPage() {
               <AccordionItem
                 key={i}
                 value={`ortopedia-${i}`}
-                className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-teal-200 data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+                className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-brand-pale-lavender data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
               >
                 <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
                   {item.title}
@@ -243,21 +243,21 @@ export default function PacientesPage() {
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             <motion.div
-              className="p-7 rounded-2xl border-l-4 border-l-teal-400 bg-white border border-[#E0E2E8]"
-              style={{ backgroundColor: "rgba(240,253,250,0.3)" }}
+              className="p-7 rounded-2xl border-l-4 border-l-brand-pale-lavender bg-white border border-[#E0E2E8]"
+              style={{ backgroundColor: "rgba(233,222,255,0.35)" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <CheckCircle2 className="w-5 h-5 text-teal-500" />
+                <CheckCircle2 className="w-5 h-5 text-brand-eerie-black" />
                 <h3 className="text-base font-medium text-[#1A1A20]">{t("patients.normalVsConsult.normal.title")}</h3>
               </div>
               <ul className="space-y-3">
                 {normalItems.map((item: string, i: number) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[#6B6B76]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-pale-lavender mt-1.5 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -293,7 +293,7 @@ export default function PacientesPage() {
       <section id="higiene" className="py-20 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-teal-600">Cuidados</p>
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">Cuidados</p>
             <h2 className="text-2xl font-medium text-[#1A1A20] mb-8">{t("patients.hygiene.title")}</h2>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -306,7 +306,7 @@ export default function PacientesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <Sparkles className="w-5 h-5 text-teal-500 mb-3" />
+                <Sparkles className="w-5 h-5 text-brand-eerie-black mb-3" />
                 <h3 className="text-sm font-medium text-[#1A1A20] mb-2">{item.title}</h3>
                 <p className="text-[13px] text-[#8A8A94] leading-relaxed">{item.description}</p>
               </motion.div>
@@ -370,16 +370,16 @@ export default function PacientesPage() {
             variants={fadeIn}
           >
             {/* Teal gradient top border */}
-            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "linear-gradient(90deg, #14b8a6, #0d9488, #0f766e)" }} />
+            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "linear-gradient(90deg, #D9C7FF, #7F7594, #150B29)" }} />
 
             {/* Decorative background icon */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <Clock className="w-48 h-48 text-teal-500 opacity-[0.03]" />
+              <Clock className="w-48 h-48 text-brand-eerie-black opacity-[0.03]" />
             </div>
 
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mx-auto mb-5">
-                <Clock className="w-8 h-8 text-teal-500" />
+              <div className="w-16 h-16 rounded-2xl bg-brand-lavender/40 flex items-center justify-center mx-auto mb-5">
+                <Clock className="w-8 h-8 text-brand-eerie-black" />
               </div>
               <h2 className="text-xl font-medium text-[#1A1A20] mb-4">{t("patients.adherence.title")}</h2>
               <p className="text-[#6B6B76] mb-8 leading-relaxed">{t("patients.adherence.description")}</p>
@@ -403,9 +403,9 @@ export default function PacientesPage() {
                 { icon: MapPin, text: "Balcarce N\u00BA 37, 2do Piso \u2014 San Salvador de Jujuy" },
               ].map(({ icon: Icon, text, href }, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <Icon className="w-4 h-4 mt-0.5 text-teal-500" />
+                  <Icon className="w-4 h-4 mt-0.5 text-brand-eerie-black" />
                   {href ? (
-                    <a href={href} className="text-sm text-[#6B6B76] hover:text-teal-600 transition-colors">{text}</a>
+                    <a href={href} className="text-sm text-[#6B6B76] hover:text-brand-rhythm transition-colors">{text}</a>
                   ) : (
                     <p className="text-sm text-[#6B6B76]">{text}</p>
                   )}
@@ -416,7 +416,7 @@ export default function PacientesPage() {
             {/* Clinic hours grid */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-4">
-                <Clock className="w-4 h-4 text-teal-500" />
+                <Clock className="w-4 h-4 text-brand-eerie-black" />
                 <p className="text-sm font-medium text-[#1A1A20]">Horarios de atenci&oacute;n</p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -428,7 +428,7 @@ export default function PacientesPage() {
                   { day: "Viernes", time: "08:00 - 12:00" },
                 ].map(({ day, time }, i) => (
                   <div key={i} className="p-3 rounded-xl bg-[#F8F9FB] border border-[#E0E2E8] text-center">
-                    <p className="text-xs font-medium text-teal-600 uppercase tracking-wide mb-1">{day}</p>
+                    <p className="text-xs font-medium text-brand-rhythm uppercase tracking-wide mb-1">{day}</p>
                     <p className="text-sm text-[#6B6B76]">{time}</p>
                   </div>
                 ))}

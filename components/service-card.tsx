@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import type { ReactNode } from "react"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "@/components/icons"
 import { useTranslations } from "@/lib/i18n"
 
 interface ServiceCardProps {
@@ -17,12 +17,12 @@ interface ServiceCardProps {
 }
 
 const defaultImages: Record<string, string> = {
-  ortopedia: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1974&auto=format&fit=crop",
-  ortodoncia: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1974&auto=format&fit=crop",
-  alineadores: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1974&auto=format&fit=crop",
-  ninos: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=1974&auto=format&fit=crop",
-  adultos: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1974&auto=format&fit=crop",
-  diagnostico: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1974&auto=format&fit=crop",
+  ortopedia: "/clinic/ortopedia.jpg",
+  ortodoncia: "/clinic/ortodoncia.jpg",
+  alineadores: "/clinic/alineadores.jpg",
+  ninos: "/clinic/ninos.jpg",
+  adultos: "/clinic/adultos.jpg",
+  diagnostico: "/clinic/planificacion.jpg",
 }
 
 const getDefaultImage = (key?: string) => {

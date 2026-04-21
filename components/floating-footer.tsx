@@ -1,8 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import { motion } from "framer-motion"
 import { useTranslations } from "@/lib/i18n"
-import { Instagram, Phone, Mail, ChevronUp } from "lucide-react"
+import { Instagram, Phone, Mail, ChevronUp } from "@/components/icons"
 
 export function FloatingFooter({ language: languageProp }: { language?: string }) {
   const { t } = useTranslations()
@@ -13,9 +14,15 @@ export function FloatingFooter({ language: languageProp }: { language?: string }
 
   return (
     <footer className="relative z-10 px-4 md:px-6 pb-6 bg-[#E8ECF0]">
-      <div className="mx-auto max-w-6xl bg-[#0A0E14] rounded-3xl overflow-hidden">
+      <motion.div
+        className="mx-auto max-w-6xl bg-brand-eerie-black rounded-3xl overflow-hidden"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         {/* Gradient accent line */}
-        <div className="h-[2px] bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-brand-pale-lavender to-transparent" />
 
         {/* Top row */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 mb-10 p-8 md:p-10 pb-0 md:pb-0">
@@ -52,7 +59,7 @@ export function FloatingFooter({ language: languageProp }: { language?: string }
                   { Icon: Phone, label: "Telefono", href: "tel:+5493885786946" },
                   { Icon: Mail, label: "Email", href: "mailto:draraquelortodoncia@gmail.com" },
                 ].map(({ Icon, label, href }, i) => (
-                  <a key={i} href={href} aria-label={label} className="w-10 h-10 rounded-full flex items-center justify-center text-white/20 hover:text-white/45 border border-white/[0.06] transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:outline-none">
+                  <a key={i} href={href} aria-label={label} className="w-10 h-10 rounded-full flex items-center justify-center text-white/20 hover:text-white/45 border border-white/[0.06] transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-brand-rhythm/40 focus-visible:outline-none">
                     <Icon className="w-4 h-4" />
                   </a>
                 ))}
@@ -83,7 +90,7 @@ export function FloatingFooter({ language: languageProp }: { language?: string }
             RAQUEL RODRIGUEZ
           </span>
         </div>
-      </div>
+      </motion.div>
     </footer>
   )
 }

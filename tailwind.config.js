@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
+        sans: ["Satoshi", "system-ui", "sans-serif"],
       },
       animation: {
         marquee: "marquee 25s linear infinite",
@@ -107,6 +107,16 @@ module.exports = {
           700: "#0f766e",
           800: "#115e59",
           900: "#134e4a",
+        },
+        brand: {
+          "bright-gray": "#EDECF0",
+          lavender: "#E9DEFF",
+          "pale-lavender": "#D9C7FF",
+          "pink-lace": "#FFE0FF",
+          rhythm: "#7F7594",
+          "eerie-black": "#150B29",
+          action: "#7B37FF",
+          "action-dark": "#5F1FE0",
         },
       },
       borderRadius: {
