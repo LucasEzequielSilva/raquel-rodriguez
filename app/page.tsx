@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useId } from "react"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -32,6 +32,32 @@ import Link from "next/link"
 import { MapPin, Phone, Mail, Clock, Instagram, Star } from "@/components/icons"
 
 gsap.registerPlugin(ScrollTrigger)
+
+const HighlightMark: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const gradId = useId()
+  return (
+    <span className="relative inline-block px-1">
+      <svg
+        className="absolute inset-x-0 bottom-[2%] w-full h-[46%] pointer-events-none"
+        viewBox="0 0 100 20"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#FFE0FF" stopOpacity="0.92" />
+            <stop offset="100%" stopColor="#D9C7FF" stopOpacity="0.92" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M2,10 Q25,3 50,9 T98,10 L99,17 Q75,22 50,18 T1,18 Z"
+          fill={`url(#${gradId})`}
+        />
+      </svg>
+      <span className="relative text-white">{children}</span>
+    </span>
+  )
+}
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -111,26 +137,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
             <div className="max-w-2xl">
               <h1 className="hero-title opacity-0 text-[clamp(2.25rem,5vw,4rem)] font-medium tracking-tighter leading-[1.05] text-white mb-5">
-                <span
-                  className="relative inline-block text-white px-1"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(180deg, transparent 62%, rgba(255,224,255,0.85) 62%, rgba(217,199,255,0.85) 92%, transparent 92%)",
-                  }}
-                >
-                  Ortodoncia
-                </span>{" "}
-                y{" "}
-                <span
-                  className="relative inline-block text-white px-1"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(180deg, transparent 62%, rgba(255,224,255,0.85) 62%, rgba(217,199,255,0.85) 92%, transparent 92%)",
-                  }}
-                >
-                  Ortopedia Facial
-                </span>{" "}
-                para todas las edades.
+                <HighlightMark>Ortodoncia</HighlightMark> y <HighlightMark>Ortopedia Facial</HighlightMark> para todas las edades.
               </h1>
               <p className="hero-sub opacity-0 text-white/80 max-w-lg text-base leading-relaxed">
                 {t("hero.subtitle")}
