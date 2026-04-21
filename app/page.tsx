@@ -142,7 +142,7 @@ export default function Home() {
               {t("hero.open")}
             </span>
             <a
-              href="https://www.google.com/search?q=Raquel+Rodriguez+Ortodoncia+Jujuy"
+              href="https://www.google.com/search?q=Dra.+Raquel+Rodriguez+Ortodoncia+Jujuy+Balcarce"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/25 hover:bg-white/15 hover:border-white/40 transition-all duration-200 group"
@@ -512,17 +512,23 @@ export default function Home() {
               <h3 className="text-base font-semibold text-brand-eerie-black mb-5">Información</h3>
               <div className="space-y-4">
                 {[
-                  { icon: MapPin, text: "Balcarce Nº 37, 2do Piso, San Salvador de Jujuy" },
-                  { icon: Phone, text: "+54 9 388 578 6946" },
-                  { icon: Mail, text: "draraquelortodoncia@gmail.com" },
-                  { icon: Instagram, text: "@od.rodriguezraquel" },
-                ].map(({ icon: Icon, text }, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-lavender to-brand-pale-lavender border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] shrink-0">
+                  { icon: MapPin, text: "Balcarce Nº 37, 2do Piso, San Salvador de Jujuy", href: "https://www.google.com/maps/search/?api=1&query=Balcarce+37+San+Salvador+de+Jujuy" },
+                  { icon: Phone, text: "+54 9 388 578 6946", href: "tel:+5493885786946" },
+                  { icon: Mail, text: "draraquelortodoncia@gmail.com", href: "mailto:draraquelortodoncia@gmail.com" },
+                  { icon: Instagram, text: "@od.rodriguezraquel", href: "https://www.instagram.com/od.rodriguezraquel" },
+                ].map(({ icon: Icon, text, href }, i) => (
+                  <a
+                    key={i}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="flex items-start gap-3 group"
+                  >
+                    <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-lavender to-brand-pale-lavender border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] shrink-0 group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(217,199,255,0.6)] transition-shadow duration-200">
                       <Icon className="w-4 h-4 text-brand-eerie-black" />
                     </span>
-                    <p className="text-sm text-brand-rhythm leading-relaxed pt-2">{text}</p>
-                  </div>
+                    <p className="text-sm text-brand-rhythm leading-relaxed pt-2 group-hover:text-brand-eerie-black transition-colors duration-200">{text}</p>
+                  </a>
                 ))}
               </div>
             </motion.div>
