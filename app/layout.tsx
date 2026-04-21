@@ -19,7 +19,7 @@ export const metadata = {
     description: "Ortodoncia, ortopedia facial y alineadores invisibles en Jujuy. Diagnóstico preciso, planificación individual y seguimiento profesional.",
     url: "https://raquelrodriguez.com.ar",
     siteName: "Dra. Raquel Rodríguez — Ortodoncia",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Dra. Raquel Rodríguez - Especialista en Ortodoncia en San Salvador de Jujuy" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Dra. Raquel Rodríguez - Especialista en Ortodoncia en San Salvador de Jujuy" }],
     locale: "es_AR",
     type: "website",
   },
@@ -27,7 +27,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Dra. Raquel Rodríguez — Ortodoncia y Ortopedia Facial | San Salvador de Jujuy",
     description: "Ortodoncia, ortopedia facial y alineadores invisibles en Jujuy. Tratamientos personalizados para todas las edades.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 }
 
