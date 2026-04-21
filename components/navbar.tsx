@@ -62,13 +62,16 @@ export function Navbar() {
           className={`relative z-50 transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`}
           aria-label="Raquel Rodríguez - Ortodoncia"
         >
-          <img
-            src="/logo.png"
-            alt="Raquel Rodríguez"
-            className={`h-10 md:h-12 w-auto transition-[filter] duration-300 ${
-              isLight ? "" : "brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
-            }`}
-          />
+          <picture>
+            <source srcSet="/logo.webp" type="image/webp" />
+            <img
+              src="/logo.png"
+              alt="Raquel Rodríguez"
+              className={`h-10 md:h-12 w-auto transition-[filter] duration-300 ${
+                isLight ? "" : "brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
+              }`}
+            />
+          </picture>
         </Link>
 
         {/* Desktop */}
