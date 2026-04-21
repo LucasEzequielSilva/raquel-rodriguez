@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Satoshi", "system-ui", "sans-serif"],
+        serif: ["Fraunces", "Georgia", "serif"],
       },
       animation: {
         marquee: "marquee 25s linear infinite",

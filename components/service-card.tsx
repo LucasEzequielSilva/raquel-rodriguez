@@ -49,7 +49,7 @@ export function ServiceCard({ translationKey = "services.items.ortodoncia", icon
           style={{ backgroundImage: `url(${getDefaultImage(translationKey)})` }}
         />
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(to bottom, rgba(10,14,20,0.75) 0%, rgba(10,14,20,0.5) 40%, rgba(10,14,20,0.85) 100%)"
+          background: "linear-gradient(to bottom, rgba(21,11,41,0.10) 0%, rgba(21,11,41,0.15) 45%, rgba(21,11,41,0.88) 100%)"
         }} />
       </div>
 

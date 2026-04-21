@@ -72,6 +72,14 @@ export default function Home() {
 
   const firstVisitSteps = t("firstVisit.steps") as unknown as { title: string; description: string }[]
 
+  const firstVisitImages = [
+    "/clinic/paso-1-evaluacion.png",
+    "/clinic/paso-2-estudios.png",
+    "/clinic/paso-3-diagnostico.png",
+    "/clinic/paso-4-explicacion.png",
+    "/clinic/paso-5-plan.png",
+  ]
+
   return (
     <div className="min-h-screen bg-[#F8F9FB]">
       <Navbar />
@@ -102,9 +110,9 @@ export default function Home() {
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
             <div className="max-w-2xl">
-              <h1 className="hero-title opacity-0 text-[clamp(2.25rem,5vw,4rem)] font-medium tracking-tighter leading-[1.05] text-white mb-5">
-                <span className="text-brand-pink-lace">Ortodoncia</span> y{" "}
-                <span className="text-brand-pink-lace">Ortopedia Facial</span>{" "}
+              <h1 className="hero-title opacity-0 font-serif text-[clamp(2.5rem,5.5vw,4.5rem)] font-medium tracking-tight leading-[1.02] text-white mb-5" style={{ fontVariationSettings: "'opsz' 144, 'SOFT' 100" }}>
+                <span className="italic text-brand-pink-lace">Ortodoncia</span> y{" "}
+                <span className="italic text-brand-pink-lace">Ortopedia Facial</span>{" "}
                 para todas las edades.
               </h1>
               <p className="hero-sub opacity-0 text-white/80 max-w-lg text-base leading-relaxed">
@@ -365,9 +373,18 @@ export default function Home() {
                 </div>
 
                 {/* Content */}
-                <div className="pb-8">
-                  <h3 className="text-base font-medium text-[#1A1A20] mb-2">{step.title}</h3>
-                  <p className="text-sm text-[#8A8A94] leading-relaxed max-w-lg">{step.description}</p>
+                <div className="pb-8 flex-1 flex items-start gap-4 md:gap-6">
+                  <div className="flex-1">
+                    <h3 className="text-base md:text-lg font-semibold text-brand-eerie-black mb-2">{step.title}</h3>
+                    <p className="text-sm text-brand-rhythm leading-relaxed max-w-lg">{step.description}</p>
+                  </div>
+                  <img
+                    src={firstVisitImages[i]}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-20 h-20 md:w-28 md:h-28 flex-shrink-0 object-contain select-none"
+                    loading="lazy"
+                  />
                 </div>
               </motion.div>
             ))}
