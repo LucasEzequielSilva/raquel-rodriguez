@@ -178,7 +178,7 @@ export const translations = {
         cases: "Pacientes Atendidos",
       },
       features: {
-        diagnosis: "Diagnóstico Individualizado",
+        diagnosis: "Diagnóstico Personalizado",
         planning: "Planificación Precisa",
         certified: "Formación Continua",
         followup: "Seguimiento Cercano",
@@ -303,7 +303,7 @@ export const translations = {
       title: "Por qué elegirnos",
       slides: {
         diagnosis: {
-          title: "Diagnóstico Individualizado",
+          title: "Diagnóstico Personalizado",
           description: "Cada paciente es único. Realizamos un diagnóstico preciso con tecnología actual para diseñar el plan más adecuado.",
         },
         planning: {
@@ -367,7 +367,7 @@ export const translations = {
         subtitle: "Combinamos experiencia clínica, tecnología y un trato cercano para lograr los mejores resultados.",
         items: [
           {
-            title: "Diagnóstico Individualizado",
+            title: "Diagnóstico Personalizado",
             description: "Evaluación completa con radiografías, cefalometría y escaneo 3D.",
           },
           {
@@ -442,7 +442,7 @@ export const translations = {
               "Cada paciente recibe una atención cercana, con explicaciones claras y acompañamiento en cada etapa.",
           },
           {
-            title: "Planificación Individualizada",
+            title: "Planificación Personalizada",
             description:
               "No hay tratamientos genéricos. Cada plan se diseña a medida según las necesidades de cada caso.",
           },
