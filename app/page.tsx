@@ -111,8 +111,25 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
             <div className="max-w-2xl">
               <h1 className="hero-title opacity-0 text-[clamp(2.25rem,5vw,4rem)] font-medium tracking-tighter leading-[1.05] text-white mb-5">
-                <span className="text-brand-pink-lace">Ortodoncia</span> y{" "}
-                <span className="text-brand-pink-lace">Ortopedia Facial</span>{" "}
+                <span
+                  className="relative inline-block text-white px-1"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, transparent 62%, rgba(255,224,255,0.85) 62%, rgba(217,199,255,0.85) 92%, transparent 92%)",
+                  }}
+                >
+                  Ortodoncia
+                </span>{" "}
+                y{" "}
+                <span
+                  className="relative inline-block text-white px-1"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(180deg, transparent 62%, rgba(255,224,255,0.85) 62%, rgba(217,199,255,0.85) 92%, transparent 92%)",
+                  }}
+                >
+                  Ortopedia Facial
+                </span>{" "}
                 para todas las edades.
               </h1>
               <p className="hero-sub opacity-0 text-white/80 max-w-lg text-base leading-relaxed">
