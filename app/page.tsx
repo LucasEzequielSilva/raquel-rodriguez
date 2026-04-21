@@ -512,7 +512,7 @@ export default function Home() {
               <h3 className="text-base font-semibold text-brand-eerie-black mb-5">Información</h3>
               <div className="space-y-4">
                 {[
-                  { icon: MapPin, text: "Balcarce Nº 37, 2do Piso, San Salvador de Jujuy", href: "https://www.google.com/maps/search/?api=1&query=Balcarce+37+San+Salvador+de+Jujuy" },
+                  { icon: MapPin, text: "Balcarce Nº 37, 2do Piso, San Salvador de Jujuy", href: "https://maps.app.goo.gl/zZ2a24Wiu524792k8" },
                   { icon: Phone, text: "+54 9 388 578 6946", href: "tel:+5493885786946" },
                   { icon: Mail, text: "draraquelortodoncia@gmail.com", href: "mailto:draraquelortodoncia@gmail.com" },
                   { icon: Instagram, text: "@od.rodriguezraquel", href: "https://www.instagram.com/od.rodriguezraquel" },
