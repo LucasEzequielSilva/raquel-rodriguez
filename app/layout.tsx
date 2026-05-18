@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import type { Viewport } from "next"
 import { LanguageProvider } from "@/components/language-provider"
 import "@/app/globals.css"
 import { Toaster } from "sonner"
@@ -6,6 +7,12 @@ import dynamic from "next/dynamic"
 
 const ScrollToTop = dynamic(() => import("@/components/scroll-to-top").then((mod) => mod.ScrollToTop), { ssr: false })
 const SmoothScroll = dynamic(() => import("@/components/smooth-scroll").then((mod) => mod.SmoothScroll), { ssr: false })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1A1A20",
+}
 
 export const metadata = {
   title: "Dra. Raquel Rodríguez — Ortodoncia y Ortopedia Facial | San Salvador de Jujuy",
@@ -71,6 +78,60 @@ export default function RootLayout({
           "openingHoursSpecification": [
             {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday"], "opens": "15:00", "closes": "20:00"},
             {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday","Friday"], "opens": "08:00", "closes": "12:00"}
+          ]
+        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿A qué edad conviene la primera consulta de ortodoncia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Se recomienda una primera evaluación a partir de los 6-7 años, cuando aparecen los primeros dientes permanentes. Esto permite detectar problemas de crecimiento o mordida a tiempo e intervenir de manera temprana si es necesario."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Los adultos pueden hacer ortodoncia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, la ortodoncia no tiene límite de edad. Contamos con opciones adaptadas a las necesidades de pacientes adultos, tanto con brackets como con alineadores invisibles."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué diferencia hay entre ortodoncia y ortopedia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La ortopedia se enfoca en guiar el crecimiento de los maxilares, principalmente en niños. La ortodoncia corrige la posición de los dientes. En muchos casos se complementan para lograr el mejor resultado."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Los alineadores sirven para todos los casos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Los alineadores son una excelente opción para muchos casos, pero no para todos. En la consulta evaluamos cuál es la mejor alternativa para cada paciente según la complejidad del caso."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto dura un tratamiento de ortodoncia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La duración varía según la complejidad del caso. En general, los tratamientos duran entre 12 y 30 meses. En la consulta de diagnóstico te daremos un tiempo estimado para tu caso particular."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿La primera consulta incluye diagnóstico?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La primera consulta incluye una evaluación clínica completa. Para el diagnóstico definitivo necesitamos estudios complementarios (radiografías, fotos, escaneo 3D) que se realizan en una segunda visita. El diagnóstico y plan de tratamiento se entregan en una tercera cita."
+              }
+            }
           ]
         }) }} />
       </head>

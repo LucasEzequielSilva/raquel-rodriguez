@@ -67,6 +67,8 @@ export function Navbar() {
             <img
               src="/logo.png"
               alt="Raquel Rodríguez"
+              width={1142}
+              height={333}
               className={`h-10 md:h-12 w-auto transition-[filter] duration-300 ${
                 isLight ? "" : "brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
               }`}

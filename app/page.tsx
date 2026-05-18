@@ -230,7 +230,7 @@ export default function Home() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] }}
                 >
-                  <img src={image} alt={label} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                  <img src={image} alt={label} loading="lazy" width={600} height={600} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
                   <div className="relative h-full p-5 md:p-6 flex flex-col justify-between">
                     <Icon className="w-7 h-7 text-white/80" />
