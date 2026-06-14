@@ -41,7 +41,7 @@ export function FaqSection() {
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium text-[#1A1A20] mb-4">
               {t("faq.title")}
             </h2>
-            <p className="text-[#8A8A94] text-sm leading-relaxed">
+            <p className="text-[#8A8A94] text-base leading-relaxed">
               {t("faq.subtitle")}{" "}
               <a href="https://wa.me/5493885786946" className="text-brand-rhythm underline underline-offset-4 hover:text-brand-eerie-black transition-colors duration-200">
                 {t("faq.contact")}
@@ -57,10 +57,10 @@ export function FaqSection() {
                   value={`item-${i}`}
                   className="faq-item rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-brand-pale-lavender data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
                 >
-                  <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
+                  <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-base font-medium">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-[#8A8A94] text-sm leading-relaxed">
+                  <AccordionContent className="text-[#8A8A94] text-base leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

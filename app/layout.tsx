@@ -86,7 +86,7 @@ export default function RootLayout({
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "¿A qué edad conviene la primera consulta de ortodoncia?",
+              "name": "¿A qué edad conviene la primer consulta de ortodoncia?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Se recomienda una primera evaluación a partir de los 6-7 años, cuando aparecen los primeros dientes permanentes. Esto permite detectar problemas de crecimiento o mordida a tiempo e intervenir de manera temprana si es necesario."
@@ -126,10 +126,10 @@ export default function RootLayout({
             },
             {
               "@type": "Question",
-              "name": "¿La primera consulta incluye diagnóstico?",
+              "name": "¿La primer consulta incluye diagnóstico?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La primera consulta incluye una evaluación clínica completa. Para el diagnóstico definitivo necesitamos estudios complementarios (radiografías, fotos, escaneo 3D) que se realizan en una segunda visita. El diagnóstico y plan de tratamiento se entregan en una tercera cita."
+                "text": "La primer consulta incluye una evaluación clínica completa. Para el diagnóstico definitivo necesitamos estudios complementarios (radiografías, fotos, escaneo 3D) que se realizan en una segunda visita. El diagnóstico y plan de tratamiento se entregan en una tercera cita."
               }
             }
           ]

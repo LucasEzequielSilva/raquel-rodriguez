@@ -107,7 +107,7 @@ export default function PacientesPage() {
             <h1 className="text-2xl md:text-3xl tracking-tight text-[#1A1A20] font-medium mb-6 leading-[1.1]">
               {t("patients.hero.title")}
             </h1>
-            <p className="text-lg text-[#6B6B76] mb-10 leading-relaxed">{t("patients.hero.subtitle")}</p>
+            <p className="text-xl text-[#6B6B76] mb-10 leading-[1.6]">{t("patients.hero.subtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <WhatsAppButton size="lg" label={t("patients.hero.cta")} />
               <a
@@ -147,7 +147,7 @@ export default function PacientesPage() {
                   <div className="w-12 h-12 rounded-xl bg-brand-lavender/40 flex items-center justify-center group-hover:bg-brand-pale-lavender transition-colors duration-200">
                     <Icon className="w-5 h-5 text-brand-rhythm" />
                   </div>
-                  <span className="text-sm font-medium text-[#4A4A54] group-hover:text-brand-eerie-black transition-colors duration-200">
+                  <span className="text-base font-medium text-[#4A4A54] group-hover:text-brand-eerie-black transition-colors duration-200">
                     {item.title}
                   </span>
                 </motion.a>
@@ -171,10 +171,10 @@ export default function PacientesPage() {
                 value={`brackets-${i}`}
                 className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-brand-pale-lavender data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
               >
-                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
+                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-base font-medium">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8A8A94] text-sm leading-relaxed">
+                <AccordionContent className="text-[#8A8A94] text-base leading-relaxed">
                   {item.description}
                 </AccordionContent>
               </AccordionItem>
@@ -197,10 +197,10 @@ export default function PacientesPage() {
                 value={`alineadores-${i}`}
                 className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-brand-pale-lavender data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
               >
-                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
+                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-base font-medium">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8A8A94] text-sm leading-relaxed">
+                <AccordionContent className="text-[#8A8A94] text-base leading-relaxed">
                   {item.description}
                 </AccordionContent>
               </AccordionItem>
@@ -223,10 +223,10 @@ export default function PacientesPage() {
                 value={`ortopedia-${i}`}
                 className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-brand-pale-lavender data-[state=open]:shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
               >
-                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
+                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-base font-medium">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8A8A94] text-sm leading-relaxed">
+                <AccordionContent className="text-[#8A8A94] text-base leading-relaxed">
                   {item.description}
                 </AccordionContent>
               </AccordionItem>
@@ -256,7 +256,7 @@ export default function PacientesPage() {
               </div>
               <ul className="space-y-3">
                 {normalItems.map((item: string, i: number) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#6B6B76]">
+                  <li key={i} className="flex items-start gap-2 text-base text-[#6B6B76]">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-pale-lavender mt-1.5 flex-shrink-0" />
                     {item}
                   </li>
@@ -278,7 +278,7 @@ export default function PacientesPage() {
               </div>
               <ul className="space-y-3">
                 {consultItems.map((item: string, i: number) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#6B6B76]">
+                  <li key={i} className="flex items-start gap-2 text-base text-[#6B6B76]">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0" />
                     {item}
                   </li>
@@ -307,8 +307,8 @@ export default function PacientesPage() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
                 <Sparkles className="w-5 h-5 text-brand-eerie-black mb-3" />
-                <h3 className="text-sm font-medium text-[#1A1A20] mb-2">{item.title}</h3>
-                <p className="text-[13px] text-[#8A8A94] leading-relaxed">{item.description}</p>
+                <h3 className="text-base font-medium text-[#1A1A20] mb-2">{item.title}</h3>
+                <p className="text-base text-[#8A8A94] leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -344,13 +344,13 @@ export default function PacientesPage() {
                 value={`emergency-${i}`}
                 className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-red-200 data-[state=open]:shadow-[0_2px_8px_rgba(239,68,68,0.06)]"
               >
-                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-[15px] font-medium">
+                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-base font-medium">
                   <span className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
                     {item.title}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8A8A94] text-sm leading-relaxed">
+                <AccordionContent className="text-[#8A8A94] text-base leading-relaxed">
                   {item.description}
                 </AccordionContent>
               </AccordionItem>
@@ -405,9 +405,9 @@ export default function PacientesPage() {
                 <div key={i} className="flex items-start gap-3">
                   <Icon className="w-4 h-4 mt-0.5 text-brand-eerie-black" />
                   {href ? (
-                    <a href={href} className="text-sm text-[#6B6B76] hover:text-brand-rhythm transition-colors">{text}</a>
+                    <a href={href} className="text-base text-[#6B6B76] hover:text-brand-rhythm transition-colors">{text}</a>
                   ) : (
-                    <p className="text-sm text-[#6B6B76]">{text}</p>
+                    <p className="text-base text-[#6B6B76]">{text}</p>
                   )}
                 </div>
               ))}
@@ -429,7 +429,7 @@ export default function PacientesPage() {
                 ].map(({ day, time }, i) => (
                   <div key={i} className="p-3 rounded-xl bg-[#F8F9FB] border border-[#E0E2E8] text-center">
                     <p className="text-xs font-medium text-brand-rhythm uppercase tracking-wide mb-1">{day}</p>
-                    <p className="text-sm text-[#6B6B76]">{time}</p>
+                    <p className="text-base text-[#6B6B76]">{time}</p>
                   </div>
                 ))}
               </div>

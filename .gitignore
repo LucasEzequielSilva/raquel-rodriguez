@@ -29,3 +29,7 @@ next-env.d.ts
 # local agent tooling (skills installer)
 .agents/
 skills-lock.json
+
+# raw video sources (only the optimized -opt version is committed)
+/public/hero-raquel-web.mp4
+/public/hero-raquel.mp4

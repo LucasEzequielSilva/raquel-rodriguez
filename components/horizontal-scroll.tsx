@@ -95,7 +95,7 @@ export function HorizontalScroll() {
                   <h3 className="text-xl md:text-2xl text-brand-eerie-black font-semibold tracking-tight mb-3 leading-tight">
                     {t(slide.titleKey)}
                   </h3>
-                  <p className="text-brand-rhythm text-sm leading-relaxed">
+                  <p className="text-brand-rhythm text-base leading-relaxed">
                     {t(slide.descriptionKey)}
                   </p>
                 </div>

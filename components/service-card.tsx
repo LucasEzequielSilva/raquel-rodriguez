@@ -64,7 +64,7 @@ export function ServiceCard({ translationKey = "services.items.ortodoncia", icon
         </div>
 
         <h3 className="text-lg font-medium mb-2 text-white tracking-tight">{t(`${translationKey}.title`)}</h3>
-        <p className="text-white/70 text-sm leading-relaxed">{t(`${translationKey}.description`)}</p>
+        <p className="text-white/70 text-base leading-relaxed">{t(`${translationKey}.description`)}</p>
       </div>
     </motion.div>
   )

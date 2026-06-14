@@ -15,12 +15,12 @@ export const blogPosts = {
     {
       id: 1,
       slug: "primera-consulta-ortodoncia",
-      title: "¿Qué esperar en tu primera consulta de ortodoncia?",
+      title: "¿Qué esperar en tu primer consulta de ortodoncia?",
       excerpt: "Te contamos paso a paso cómo es la primera visita para que llegues preparado y sin dudas.",
       content: `
-        <p>La primera consulta de ortodoncia es un momento clave. Es donde evaluamos tu situación clínica, te explicamos qué encontramos y te presentamos las opciones de tratamiento más adecuadas para vos.</p>
+        <p>La primer consulta de ortodoncia es un momento clave. Es donde evaluamos tu situación clínica, te explicamos qué encontramos y te presentamos las opciones de tratamiento más adecuadas para vos.</p>
 
-        <h2>¿Cómo es la primera consulta?</h2>
+        <h2>¿Cómo es la primer consulta?</h2>
 
         <p>En la consulta inicial realizamos:</p>
 
@@ -34,7 +34,7 @@ export const blogPosts = {
 
         <h2>¿Necesito traer estudios?</h2>
 
-        <p>No es necesario traer estudios a la primera consulta. Si luego del examen clínico consideramos que es necesario profundizar el diagnóstico, te indicaremos qué estudios realizar (radiografías, cefalometría, etc.) para la segunda visita.</p>
+        <p>No es necesario traer estudios a la primer consulta. Si luego del examen clínico consideramos que es necesario profundizar el diagnóstico, te indicaremos qué estudios realizar (radiografías, cefalometría, etc.) para la segunda visita.</p>
 
         <h2>¿Cuánto dura?</h2>
 
@@ -103,7 +103,7 @@ export const blogPosts = {
     {
       id: 3,
       slug: "ortodoncia-infantil-cuando-consultar",
-      title: "Ortodoncia en niños: ¿cuándo es el momento ideal para la primera consulta?",
+      title: "Ortodoncia en niños: ¿cuándo es el momento ideal para la primer consulta?",
       excerpt: "Detectar problemas de mordida y crecimiento a tiempo puede simplificar el tratamiento futuro de tu hijo.",
       content: `
         <p>Muchos padres se preguntan cuándo es el momento adecuado para llevar a su hijo al ortodoncista. La respuesta es más temprana de lo que la mayoría imagina: entre los 6 y 7 años es la edad ideal para una primera evaluación.</p>
@@ -134,7 +134,7 @@ export const blogPosts = {
 
         <h2>¿Todos los niños necesitan tratamiento?</h2>
 
-        <p>No necesariamente. En muchos casos, la primera consulta sirve para controlar y hacer seguimiento del crecimiento sin necesidad de intervenir. Lo importante es evaluar a tiempo para no perder la ventana de oportunidad.</p>
+        <p>No necesariamente. En muchos casos, la primer consulta sirve para controlar y hacer seguimiento del crecimiento sin necesidad de intervenir. Lo importante es evaluar a tiempo para no perder la ventana de oportunidad.</p>
 
         <h2>¿Cómo es la consulta para niños?</h2>
 
@@ -166,7 +166,7 @@ export const translations = {
       open: "ABIERTA",
       title: "Ortodoncia y Ortopedia Facial para todas las edades.",
       subtitle: "Diagnóstico preciso, planificación individual y seguimiento profesional para mejorar tu sonrisa, función y salud bucal.",
-      cta: "Reservar primera consulta",
+      cta: "Reservar primer consulta",
       ctaPatients: "Ya estoy en tratamiento",
     },
     about: {
@@ -225,7 +225,7 @@ export const translations = {
       ],
     },
     firstVisit: {
-      title: "Cómo es la primera consulta",
+      title: "Cómo es la primer consulta",
       steps: [
         { title: "Evaluación clínica", description: "Examen completo de dientes, mordida y maxilares." },
         { title: "Estudios complementarios", description: "Fotografías y estudios si son necesarios." },
@@ -266,7 +266,7 @@ export const translations = {
       subtitle: "¿Tenés otra consulta?",
       contact: "Escribinos",
       age: {
-        question: "¿A qué edad conviene la primera consulta de ortodoncia?",
+        question: "¿A qué edad conviene la primer consulta de ortodoncia?",
         answer:
           "Se recomienda una primera evaluación a partir de los 6-7 años, cuando aparecen los primeros dientes permanentes. Esto permite detectar problemas de crecimiento o mordida a tiempo e intervenir de manera temprana si es necesario.",
       },
@@ -291,9 +291,9 @@ export const translations = {
           "La duración varía según la complejidad del caso. En general, los tratamientos duran entre 12 y 30 meses. En la consulta de diagnóstico te daremos un tiempo estimado para tu caso particular.",
       },
       firstVisit: {
-        question: "¿La primera consulta incluye diagnóstico?",
+        question: "¿La primer consulta incluye diagnóstico?",
         answer:
-          "La primera consulta incluye una evaluación clínica completa. Para el diagnóstico definitivo necesitamos estudios complementarios (radiografías, fotos, escaneo 3D) que se realizan en una segunda visita. El diagnóstico y plan de tratamiento se entregan en una tercera cita.",
+          "La primer consulta incluye una evaluación clínica completa. Para el diagnóstico definitivo necesitamos estudios complementarios (radiografías, fotos, escaneo 3D) que se realizan en una segunda visita. El diagnóstico y plan de tratamiento se entregan en una tercera cita.",
       },
     },
     common: {
@@ -392,7 +392,7 @@ export const translations = {
             name: "María L.",
             role: "Paciente de Ortodoncia",
             content:
-              "Excelente profesional. Me explicó todo con claridad desde la primera consulta. Estoy muy contenta con los resultados.",
+              "Excelente profesional. Me explicó todo con claridad desde la primer consulta. Estoy muy contenta con los resultados.",
           },
           {
             name: "Carolina R.",
@@ -410,7 +410,7 @@ export const translations = {
       },
       cta: {
         title: "¿Querés comenzar tu tratamiento?",
-        subtitle: "Agendá tu primera consulta y recibí un diagnóstico personalizado.",
+        subtitle: "Agendá tu primer consulta y recibí un diagnóstico personalizado.",
       },
     },
     aboutPage: {

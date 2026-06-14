@@ -28,7 +28,7 @@ export function FloatingFooter({ language: languageProp }: { language?: string }
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 mb-10 p-8 md:p-10 pb-0 md:pb-0">
           <div>
             <span className="text-white/60 text-lg font-bold tracking-tight mb-4 block">Dra. Raquel Rodriguez</span>
-            <p className="text-white/30 max-w-xs text-sm leading-relaxed">{t("footer.description")}</p>
+            <p className="text-white/30 max-w-xs text-base leading-relaxed">{t("footer.description")}</p>
           </div>
 
           <div className="flex flex-wrap gap-x-12 gap-y-6">
@@ -49,7 +49,7 @@ export function FloatingFooter({ language: languageProp }: { language?: string }
             </div>
             <div>
               <h3 className="text-white/40 text-[11px] font-medium tracking-widest uppercase mb-3">{t("footer.contact")}</h3>
-              <p className="text-white/30 text-sm leading-relaxed mb-4">
+              <p className="text-white/30 text-base leading-relaxed mb-4">
                 Balcarce Nro 37, 2do Piso<br />
                 San Salvador de Jujuy, Jujuy
               </p>

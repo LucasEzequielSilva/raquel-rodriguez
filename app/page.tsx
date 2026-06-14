@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useId } from "react"
+import { useEffect } from "react"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -42,31 +42,11 @@ const GoogleG: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 )
 
-const HighlightMark: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const gradId = useId()
-  return (
-    <span className="relative inline-block px-1">
-      <svg
-        className="absolute inset-x-0 -bottom-[6%] w-full h-[38%] pointer-events-none"
-        viewBox="0 0 100 20"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#FFE0FF" stopOpacity="0.92" />
-            <stop offset="100%" stopColor="#D9C7FF" stopOpacity="0.92" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M2,10 Q25,3 50,9 T98,10 L99,17 Q75,22 50,18 T1,18 Z"
-          fill={`url(#${gradId})`}
-        />
-      </svg>
-      <span className="relative text-white">{children}</span>
-    </span>
-  )
-}
+const HighlightMark: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="bg-gradient-to-r from-[#FFE0FF] to-[#D9C7FF] bg-clip-text text-transparent">
+    {children}
+  </span>
+)
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -121,17 +101,21 @@ export default function Home() {
 
       {/* ═══ HERO — Full-bleed video ═══ */}
       <section id="inicio" className="relative min-h-screen flex items-end overflow-hidden bg-brand-eerie-black">
-        {/* Animated WebP background (smoother decode than MP4) */}
-        <img
-          src="/hero-raquel.webp?v=4"
-          alt=""
+        {/* Background video */}
+        <video
+          src="/hero-raquel-web-opt.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         />
 
         {/* Legibility overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-eerie-black/85 via-brand-eerie-black/30 to-brand-eerie-black/50 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-eerie-black/50 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-eerie-black/95 via-brand-eerie-black/60 to-brand-eerie-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-eerie-black/75 via-brand-eerie-black/25 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-brand-eerie-black/20 pointer-events-none" />
 
         <div className="relative z-10 w-full container mx-auto px-4 md:px-8 pb-14 md:pb-20 pt-32">
           <div className="hero-badge opacity-0 mb-8 md:mb-12 flex flex-wrap items-center gap-3">
@@ -163,7 +147,7 @@ export default function Home() {
               <h1 className="hero-title opacity-0 text-[clamp(2.25rem,5vw,4rem)] font-medium tracking-tighter leading-[1.05] text-white mb-5">
                 <HighlightMark>Ortodoncia</HighlightMark> y <HighlightMark>Ortopedia Facial</HighlightMark> para todas las edades.
               </h1>
-              <p className="hero-sub opacity-0 text-white/80 max-w-lg text-base leading-relaxed">
+              <p className="hero-sub opacity-0 text-white/90 max-w-xl text-xl leading-[1.6]">
                 {t("hero.subtitle")}
               </p>
             </div>
@@ -194,7 +178,7 @@ export default function Home() {
                 <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-6 text-[#1A1A20]">
                   {t("about.title")}
                 </h2>
-                <p className="text-base leading-[1.7] max-w-xl text-[#6B6B76]">
+                <p className="text-lg leading-[1.75] max-w-xl text-[#6B6B76]">
                   {t("about.description")}
                 </p>
               </motion.div>
@@ -280,7 +264,7 @@ export default function Home() {
               <p className="text-sm text-brand-rhythm font-medium mb-6">
                 Ortodoncia y Ortopedia Facial de los Maxilares
               </p>
-              <div className="space-y-4 text-[#6B6B76] text-base leading-[1.7] mb-8">
+              <div className="space-y-4 text-[#6B6B76] text-lg leading-[1.75] mb-8">
                 <p>
                   Con más de 15 años de experiencia específicos en el área, contamos con una trayectoria consolidada en el diagnóstico y tratamiento de alteraciones dentarias y del crecimiento maxilofacial.
                 </p>
@@ -291,7 +275,7 @@ export default function Home() {
 
               {/* Credentials */}
               <div className="flex flex-wrap gap-2 mb-8">
-                {["Invisalign", "ASIRI", "Keep Smiling"].map((brand) => (
+                {["Invisalign", "ASIRI", "Keep Smiling", "Angel Aligner", "Spark"].map((brand) => (
                   <span key={brand} className="px-3 py-1.5 rounded-full text-xs font-medium border border-[#E0E2E8] text-[#6B6B76] bg-white">
                     {brand}
                   </span>
@@ -311,7 +295,7 @@ export default function Home() {
                 </div>
                 <div className="w-px h-10 bg-brand-pale-lavender/50" />
                 <div>
-                  <AnimatedCountUp to={3} className="text-2xl" />
+                  <AnimatedCountUp to={5} className="text-2xl" />
                   <span className="block text-xs text-brand-rhythm mt-1">Marcas de alineadores</span>
                 </div>
               </div>
@@ -355,7 +339,7 @@ export default function Home() {
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-sm text-brand-rhythm leading-relaxed">{item}</p>
+                <p className="text-base text-brand-rhythm leading-relaxed">{item}</p>
               </motion.div>
             ))}
           </div>
@@ -372,7 +356,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
               {t("services.title")}
             </h2>
-            <p className="text-base leading-[1.7] text-[#6B6B76]">
+            <p className="text-lg leading-[1.75] text-[#6B6B76]">
               {t("services.description")}
             </p>
           </motion.div>
@@ -424,7 +408,7 @@ export default function Home() {
                 <div className="pb-8 flex-1 flex items-start gap-4 md:gap-6">
                   <div className="flex-1">
                     <h3 className="text-base md:text-lg font-semibold text-brand-eerie-black mb-2">{step.title}</h3>
-                    <p className="text-sm text-brand-rhythm leading-relaxed max-w-lg">{step.description}</p>
+                    <p className="text-base text-brand-rhythm leading-relaxed max-w-lg">{step.description}</p>
                   </div>
                   <img
                     src={firstVisitImages[i]}
@@ -456,7 +440,7 @@ export default function Home() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              { name: "María L.", role: "Paciente de Ortodoncia", content: "Excelente profesional. Me explicó todo con claridad desde la primera consulta. Estoy muy contenta con los resultados." },
+              { name: "María L.", role: "Paciente de Ortodoncia", content: "Excelente profesional. Me explicó todo con claridad desde la primer consulta. Estoy muy contenta con los resultados." },
               { name: "Carolina R.", role: "Mamá de paciente", content: "Llevé a mi hijo por problemas de mordida y el tratamiento fue impecable. La Dra. Raquel es muy dedicada y profesional." },
               { name: "Pablo M.", role: "Paciente de Alineadores", content: "Elegí alineadores invisibles y fue la mejor decisión. El seguimiento es constante y los resultados se ven desde el inicio." },
             ].map((testimonial, i) => (
@@ -474,7 +458,7 @@ export default function Home() {
                     <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm text-brand-rhythm leading-relaxed mb-5">"{testimonial.content}"</p>
+                <p className="text-base text-brand-rhythm leading-relaxed mb-5">"{testimonial.content}"</p>
                 <div>
                   <p className="text-sm font-semibold text-brand-eerie-black">{testimonial.name}</p>
                   <p className="text-xs text-brand-rhythm/70">{testimonial.role}</p>
@@ -527,7 +511,7 @@ export default function Home() {
                     <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-brand-lavender to-brand-pale-lavender border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] shrink-0 group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_4px_14px_rgba(217,199,255,0.6)] transition-shadow duration-200">
                       <Icon className="w-4 h-4 text-brand-eerie-black" />
                     </span>
-                    <p className="text-sm text-brand-rhythm leading-relaxed pt-2 group-hover:text-brand-eerie-black transition-colors duration-200">{text}</p>
+                    <p className="text-base text-brand-rhythm leading-relaxed pt-2 group-hover:text-brand-eerie-black transition-colors duration-200">{text}</p>
                   </a>
                 ))}
               </div>
@@ -555,7 +539,7 @@ export default function Home() {
                 ].map(({ day, time }, i) => (
                   <div key={i} className="p-3 rounded-lg bg-[#F5F7FA] border border-[#E0E2E8]">
                     <p className="text-xs font-medium text-brand-rhythm uppercase tracking-wider">{day}</p>
-                    <p className="text-sm text-[#4A4A54] mt-0.5">{time}</p>
+                    <p className="text-base text-[#4A4A54] mt-0.5">{time}</p>
                   </div>
                 ))}
               </div>
@@ -572,7 +556,7 @@ export default function Home() {
               <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
               <div>
                 <h3 className="text-base font-medium mb-3">¿Querés agendar tu consulta?</h3>
-                <p className="text-sm text-brand-eerie-black/70 leading-relaxed mb-6">
+                <p className="text-base text-brand-eerie-black/70 leading-relaxed mb-6">
                   Escribinos por WhatsApp y coordinamos tu primera visita. La consulta tiene un valor de $40.000 (efectivo o transferencia).
                 </p>
               </div>
@@ -599,3 +583,4 @@ export default function Home() {
     </div>
   )
 }
+

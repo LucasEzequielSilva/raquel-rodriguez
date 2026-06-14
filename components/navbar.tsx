@@ -10,7 +10,7 @@ import { useTranslations } from "@/lib/i18n"
 const menuItems = [
   { title: "Inicio", href: "/#inicio" },
   { title: "Tratamientos", href: "/#tratamientos" },
-  { title: "Primera Consulta", href: "/#primera-consulta" },
+  { title: "Primer Consulta", href: "/#primera-consulta" },
   { title: "FAQ", href: "/#faq" },
   { title: "Contacto", href: "/#contacto" },
   { title: "Pacientes", href: "/pacientes" },
@@ -52,7 +52,7 @@ export function Navbar() {
 
   return (
     <header className="fixed w-full z-50 px-4 md:px-6 pt-4 transition-all duration-500">
-      <nav className={`mx-auto max-w-5xl px-6 md:px-8 h-16 md:h-20 flex justify-between items-center rounded-full transition-all duration-500 ${
+      <nav className={`mx-auto max-w-7xl px-6 md:px-8 h-16 md:h-20 flex justify-between items-center rounded-full transition-all duration-500 ${
         isLight && !isOpen
           ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.06)] border border-black/[0.04]"
           : ""
@@ -69,7 +69,7 @@ export function Navbar() {
               alt="Raquel Rodríguez"
               width={1142}
               height={333}
-              className={`h-10 md:h-12 w-auto transition-[filter] duration-300 ${
+              className={`h-12 md:h-14 w-auto transition-[filter] duration-300 ${
                 isLight ? "" : "brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
               }`}
             />
@@ -83,7 +83,7 @@ export function Navbar() {
               key={item.title}
               href={item.href}
               onClick={(e) => handleClick(e, item.href)}
-              className={`text-[13px] font-semibold px-3 py-2 rounded-full transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-brand-pale-lavender focus-visible:outline-none ${
+              className={`text-[15px] font-semibold px-3 py-2 rounded-full transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-brand-pale-lavender focus-visible:outline-none ${
                 isLight
                   ? "text-[#1A1A20]/60 hover:text-[#1A1A20]"
                   : "text-white/85 hover:text-white"
@@ -97,7 +97,7 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="https://wa.me/5493885786946"
-            className={`whitespace-nowrap px-5 py-2.5 rounded-full text-[13px] font-bold active:scale-[0.98] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-brand-pale-lavender focus-visible:outline-none ${
+            className={`whitespace-nowrap px-5 py-2.5 rounded-full text-[15px] font-bold active:scale-[0.98] transition-all duration-300 focus-visible:ring-2 focus-visible:ring-brand-pale-lavender focus-visible:outline-none ${
               isLight
                 ? "bg-brand-pale-lavender text-brand-eerie-black border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),inset_0_-1px_0_rgba(0,0,0,0.05),0_6px_18px_rgba(217,199,255,0.55)] hover:bg-brand-lavender hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),inset_0_-1px_0_rgba(0,0,0,0.06),0_8px_24px_rgba(217,199,255,0.7)]"
                 : "bg-white text-brand-eerie-black border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(0,0,0,0.04),0_4px_14px_rgba(21,11,41,0.25)] hover:bg-brand-pale-lavender hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_6px_18px_rgba(21,11,41,0.3)]"
