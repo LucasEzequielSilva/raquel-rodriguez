@@ -227,11 +227,9 @@ export const translations = {
     firstVisit: {
       title: "Cómo es la primer consulta",
       steps: [
-        { title: "Evaluación clínica", description: "Examen completo de dientes, mordida y maxilares." },
-        { title: "Estudios complementarios", description: "Fotografías y estudios si son necesarios." },
-        { title: "Diagnóstico personalizado", description: "Análisis detallado de tu situación particular." },
-        { title: "Explicación clara", description: "Te explicamos el problema y las opciones de tratamiento." },
-        { title: "Plan y presupuesto", description: "Plan propuesto adaptado a tus necesidades y presupuesto." },
+        { visit: "1ª visita", title: "Evaluación clínica", description: "Realizamos una historia clínica completa y evaluamos antecedentes genéticos, la mordida, la posición de los elementos dentarios, la cara y la postura. Acá indicamos los estudios necesarios." },
+        { visit: "2ª visita", title: "Estudios complementarios", description: "Fotografías, escaneo intraoral y radiografías si son necesarias." },
+        { visit: "3ª visita", title: "Diagnóstico, explicación y plan", description: "Te explicamos el diagnóstico personalizado, las opciones de tratamiento y entregamos el plan con presupuesto adaptado a tus necesidades." },
       ],
     },
     contact: {

@@ -27,6 +27,7 @@ import {
 import { HorizontalScroll } from "@/components/horizontal-scroll"
 import { FloatingFooter } from "@/components/floating-footer"
 import { FaqSection } from "@/components/faq-section"
+import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { AnimatedCountUp, AnimatedStars } from "@/components/animated-stats"
 import Link from "next/link"
 import { MapPin, Phone, Mail, Clock, Instagram, Star } from "@/components/icons"
@@ -85,7 +86,7 @@ export default function Home() {
 
   const forWhomItems = t("forWhom.items") as unknown as string[]
 
-  const firstVisitSteps = t("firstVisit.steps") as unknown as { title: string; description: string }[]
+  const firstVisitSteps = t("firstVisit.steps") as unknown as { visit: string; title: string; description: string }[]
 
   const firstVisitImages = [
     "/clinic/paso-1-evaluacion.png",
@@ -376,47 +377,47 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
             <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
-              Tu primera visita
+              El proceso en 3 visitas
             </p>
             <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
               {t("firstVisit.title")}
             </h2>
           </motion.div>
 
-          {/* Timeline layout */}
-          <div className="max-w-3xl mx-auto">
-            {firstVisitSteps.map((step: { title: string; description: string }, i: number) => (
+          {/* Cards layout */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {firstVisitSteps.map((step: { visit: string; title: string; description: string }, i: number) => (
               <motion.div
                 key={i}
-                className="relative flex gap-6 md:gap-10 pb-12 last:pb-0"
+                className="group relative flex flex-col rounded-3xl bg-white border border-brand-pale-lavender/40 shadow-[0_4px_20px_rgba(217,199,255,0.18)] hover:shadow-[0_16px_40px_rgba(217,199,255,0.4)] hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
               >
-                {/* Timeline column — circle + dashed line */}
-                <div className="flex flex-col items-center flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-lavender to-brand-pale-lavender text-brand-eerie-black flex items-center justify-center text-sm font-bold border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_6px_18px_rgba(217,199,255,0.55)]">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  {i < firstVisitSteps.length - 1 && (
-                    <div className="flex-1 w-px border-l-2 border-dashed border-brand-pale-lavender mt-3" />
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="pb-8 flex-1 flex items-start gap-4 md:gap-6">
-                  <div className="flex-1">
-                    <h3 className="text-base md:text-lg font-semibold text-brand-eerie-black mb-2">{step.title}</h3>
-                    <p className="text-base text-brand-rhythm leading-relaxed max-w-lg">{step.description}</p>
-                  </div>
+                {/* Visual panel */}
+                <div className="relative h-44 flex items-center justify-center border-b border-brand-pale-lavender/30 overflow-hidden">
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: "radial-gradient(circle at 50% 45%, rgba(217,199,255,0.38), transparent 70%)" }}
+                  />
+                  <span className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-gradient-to-br from-brand-lavender to-brand-pale-lavender text-brand-eerie-black flex items-center justify-center text-xs font-bold border border-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_6px_18px_rgba(217,199,255,0.55)]">
+                    {["1er paso", "2do paso", "3er paso"][i]}
+                  </span>
                   <img
                     src={firstVisitImages[i]}
                     alt=""
                     aria-hidden="true"
-                    className="w-20 h-20 md:w-28 md:h-28 flex-shrink-0 object-contain select-none"
+                    className="relative w-28 h-28 object-contain select-none transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
+                </div>
+
+                {/* Body */}
+                <div className="p-7 flex-1">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-action mb-2">{step.visit}</p>
+                  <h3 className="text-lg font-semibold text-brand-eerie-black mb-2">{step.title}</h3>
+                  <p className="text-base text-brand-rhythm leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -438,34 +439,7 @@ export default function Home() {
               Lo que dicen nuestros pacientes
             </h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              { name: "María L.", role: "Paciente de Ortodoncia", content: "Excelente profesional. Me explicó todo con claridad desde la primer consulta. Estoy muy contenta con los resultados." },
-              { name: "Carolina R.", role: "Mamá de paciente", content: "Llevé a mi hijo por problemas de mordida y el tratamiento fue impecable. La Dra. Raquel es muy dedicada y profesional." },
-              { name: "Pablo M.", role: "Paciente de Alineadores", content: "Elegí alineadores invisibles y fue la mejor decisión. El seguimiento es constante y los resultados se ven desde el inicio." },
-            ].map((testimonial, i) => (
-              <motion.div
-                key={i}
-                className="relative p-7 rounded-2xl bg-white border border-brand-pale-lavender/30 hover:border-brand-pale-lavender hover:shadow-[0_12px_36px_rgba(217,199,255,0.45)] transition-all duration-300 overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-base text-brand-rhythm leading-relaxed mb-5">"{testimonial.content}"</p>
-                <div>
-                  <p className="text-sm font-semibold text-brand-eerie-black">{testimonial.name}</p>
-                  <p className="text-xs text-brand-rhythm/70">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 

@@ -11,6 +11,7 @@ import {
   HeartAddIcon,
   CheckmarkCircle02Icon,
   ArrowRight01Icon,
+  ArrowLeft01Icon,
   UserGroupIcon,
   QuoteDownIcon,
   MapPinIcon,
@@ -47,6 +48,8 @@ export const GraduationCap = Mortarboard02Icon
 export const HeartHandshake = HeartAddIcon
 export const CheckCircle2 = CheckmarkCircle02Icon
 export const ArrowRight = ArrowRight01Icon
+export const ChevronRight = ArrowRight01Icon
+export const ChevronLeft = ArrowLeft01Icon
 export const Users = UserGroupIcon
 export const Quote = QuoteDownIcon
 export const MapPin = MapPinIcon
