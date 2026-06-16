@@ -15,7 +15,8 @@
       "PowerShell($exe = \\(Get-Process brave | Select-Object -First 1\\).Path; $exe; Get-Process brave | ForEach-Object { $null = $_.CloseMainWindow\\(\\) }; Start-Sleep -Seconds 4; $left = Get-Process brave -ErrorAction SilentlyContinue; if \\($left\\) { try { $left | Stop-Process -Force -Confirm:$false -ErrorAction Stop } catch {} }; Start-Sleep -Seconds 2; \"procesos restantes: $\\(\\(Get-Process brave -ErrorAction SilentlyContinue | Measure-Object\\).Count\\)\")",
       "PowerShell(Start-Process \"C:\\\\Program Files\\\\BraveSoftware\\\\Brave-Browser\\\\Application\\\\brave.exe\" -ArgumentList '--remote-debugging-port=9222','--restore-last-session'; Start-Sleep -Seconds 6; try { $v = Invoke-RestMethod \"http://localhost:9222/json/version\" -TimeoutSec 5; \"CDP OK: $\\($v.Browser\\)\" } catch { \"CDP FAIL: $\\($_.Exception.Message\\)\" })",
       "PowerShell(Start-Sleep -Seconds 5; try { $v = Invoke-RestMethod \"http://localhost:9222/json/version\" -TimeoutSec 5; \"CDP OK: $\\($v.Browser\\)\" } catch { \"retry FAIL: $\\($_.Exception.Message\\)\"; netstat -ano | Select-String \":9222\" | Select-Object -First 3 })",
-      "PowerShell(\\(Get-CimInstance Win32_Process -Filter \"Name='brave.exe'\" | Where-Object { $_.CommandLine -notmatch '--type=' } | Select-Object -First 1\\).CommandLine)"
+      "PowerShell(\\(Get-CimInstance Win32_Process -Filter \"Name='brave.exe'\" | Where-Object { $_.CommandLine -notmatch '--type=' } | Select-Object -First 1\\).CommandLine)",
+      "PowerShell($c = Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { \"puerto 3000 ocupado por PID $\\($c.OwningProcess | Select-Object -First 1\\)\" } else { \"puerto 3000 libre — dev server caido\" })"
     ]
   }
 }

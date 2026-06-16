@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -56,6 +56,27 @@ const fadeIn = {
 
 export default function Home() {
   const { t, language } = useTranslations()
+  const heroVideoRef = useRef<HTMLVideoElement>(null)
+
+  // Force autoplay on iOS Safari (React doesn't emit the `muted` attribute on SSR,
+  // so Safari blocks autoplay at parse time). Keep it playing — it can't be paused.
+  useEffect(() => {
+    const v = heroVideoRef.current
+    if (!v) return
+    v.muted = true
+    v.defaultMuted = true
+    const play = () => { v.play().catch(() => {}) }
+    play()
+    const onVisible = () => { if (!document.hidden) play() }
+    v.addEventListener("pause", play)
+    document.addEventListener("visibilitychange", onVisible)
+    document.addEventListener("touchstart", play, { once: true, passive: true })
+    return () => {
+      v.removeEventListener("pause", play)
+      document.removeEventListener("visibilitychange", onVisible)
+      document.removeEventListener("touchstart", play)
+    }
+  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -104,19 +125,20 @@ export default function Home() {
       <section id="inicio" className="relative min-h-screen flex items-end overflow-hidden bg-brand-eerie-black">
         {/* Background video */}
         <video
+          ref={heroVideoRef}
           src="/hero-raquel-web-opt.mp4"
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         />
 
-        {/* Legibility overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-eerie-black/95 via-brand-eerie-black/60 to-brand-eerie-black/70 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-eerie-black/75 via-brand-eerie-black/25 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-brand-eerie-black/20 pointer-events-none" />
+        {/* Legibility overlays — keep the bottom-left readable, let the rest show the video */}
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-eerie-black/88 via-brand-eerie-black/25 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-eerie-black/60 via-transparent to-transparent pointer-events-none" />
 
         <div className="relative z-10 w-full container mx-auto px-4 md:px-8 pb-14 md:pb-20 pt-32">
           <div className="hero-badge opacity-0 mb-8 md:mb-12 flex flex-wrap items-center gap-3">
