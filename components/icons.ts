@@ -19,6 +19,8 @@ import {
   Mail01Icon,
   Clock01Icon,
   InstagramIcon,
+  Facebook01Icon,
+  WhatsappIcon,
   StarIcon,
   ShieldEnergyIcon,
   SparklesIcon,
@@ -54,9 +56,11 @@ export const Users = UserGroupIcon
 export const Quote = QuoteDownIcon
 export const MapPin = MapPinIcon
 export const Phone = Call02Icon
+export const WhatsApp = WhatsappIcon
 export const Mail = Mail01Icon
 export const Clock = Clock01Icon
 export const Instagram = InstagramIcon
+export const Facebook = Facebook01Icon
 export const Star = StarIcon
 export const ShieldAlert = ShieldEnergyIcon
 export const Sparkles = SparklesIcon

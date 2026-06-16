@@ -399,7 +399,7 @@ export default function PacientesPage() {
             <div className="space-y-4 mb-8">
               {[
                 { icon: Phone, text: "+54 9 388 578 6946", href: "tel:+5493885786946" },
-                { icon: Mail, text: "draraquelortodoncia@gmail.com", href: "mailto:draraquelortodoncia@gmail.com" },
+                { icon: Mail, text: "odrodriguezraquel@gmail.com", href: "mailto:odrodriguezraquel@gmail.com" },
                 { icon: MapPin, text: "Balcarce N\u00BA 37, 2do Piso \u2014 San Salvador de Jujuy" },
               ].map(({ icon: Icon, text, href }, i) => (
                 <div key={i} className="flex items-start gap-3">

@@ -55,7 +55,7 @@ export default function RootLayout({
           "description": "Especialista en ortodoncia y ortopedia facial de los maxilares. Tratamientos para niños, adolescentes y adultos.",
           "url": "https://raquelrodriguez.com.ar",
           "telephone": "+54-9-388-578-6946",
-          "email": "draraquelortodoncia@gmail.com",
+          "email": "odrodriguezraquel@gmail.com",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Balcarce Nº 37, 2do Piso",
@@ -89,7 +89,7 @@ export default function RootLayout({
               "name": "¿A qué edad conviene la primer consulta de ortodoncia?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Se recomienda una primera evaluación a partir de los 6-7 años, cuando aparecen los primeros dientes permanentes. Esto permite detectar problemas de crecimiento o mordida a tiempo e intervenir de manera temprana si es necesario."
+                "text": "Te recomendamos la primer consulta a partir de los 5 años de edad. Una evaluación temprana permite detectar problemas de crecimiento o de mordida a tiempo e intervenir de manera oportuna si es necesario."
               }
             },
             {

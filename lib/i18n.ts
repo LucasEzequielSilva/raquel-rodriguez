@@ -266,7 +266,7 @@ export const translations = {
       age: {
         question: "¿A qué edad conviene la primer consulta de ortodoncia?",
         answer:
-          "Se recomienda una primera evaluación a partir de los 6-7 años, cuando aparecen los primeros dientes permanentes. Esto permite detectar problemas de crecimiento o mordida a tiempo e intervenir de manera temprana si es necesario.",
+          "Te recomendamos la primer consulta a partir de los 5 años de edad. Una evaluación temprana permite detectar problemas de crecimiento o de mordida a tiempo e intervenir de manera oportuna si es necesario.",
       },
       adults: {
         question: "¿Los adultos pueden hacer ortodoncia?",

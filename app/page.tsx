@@ -30,7 +30,7 @@ import { FaqSection } from "@/components/faq-section"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { AnimatedCountUp, AnimatedStars } from "@/components/animated-stats"
 import Link from "next/link"
-import { MapPin, Phone, Mail, Clock, Instagram, Star } from "@/components/icons"
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Star } from "@/components/icons"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -472,8 +472,9 @@ export default function Home() {
                 {[
                   { icon: MapPin, text: "Balcarce Nº 37, 2do Piso, San Salvador de Jujuy", href: "https://maps.app.goo.gl/zZ2a24Wiu524792k8" },
                   { icon: Phone, text: "+54 9 388 578 6946", href: "tel:+5493885786946" },
-                  { icon: Mail, text: "draraquelortodoncia@gmail.com", href: "mailto:draraquelortodoncia@gmail.com" },
+                  { icon: Mail, text: "odrodriguezraquel@gmail.com", href: "mailto:odrodriguezraquel@gmail.com" },
                   { icon: Instagram, text: "@od.rodriguezraquel", href: "https://www.instagram.com/od.rodriguezraquel" },
+                  { icon: Facebook, text: "Dra. Raquel Rodríguez", href: "https://www.facebook.com/profile.php?id=61579104240016" },
                 ].map(({ icon: Icon, text, href }, i) => (
                   <a
                     key={i}
@@ -529,9 +530,12 @@ export default function Home() {
             >
               <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: "linear-gradient(90deg, #FFE0FF, #D9C7FF, #E9DEFF)" }} />
               <div>
-                <h3 className="text-base font-medium mb-3">¿Querés agendar tu consulta?</h3>
-                <p className="text-base text-brand-eerie-black/70 leading-relaxed mb-6">
-                  Escribinos por WhatsApp y coordinamos tu primera visita. La consulta tiene un valor de $40.000 (efectivo o transferencia).
+                <h3 className="text-lg font-semibold mb-3">Reservá tu turno cuando quieras</h3>
+                <p className="text-base text-brand-eerie-black/70 leading-relaxed mb-4">
+                  Te atiende al instante nuestra asistente virtual por WhatsApp: te muestra los horarios disponibles y agenda tu primera consulta en el momento. Cualquier día, a cualquier hora, sin esperas ni llamadas.
+                </p>
+                <p className="text-[13px] font-medium text-brand-eerie-black/55 mb-6">
+                  Agenda · reprograma · te recuerda tu turno, las 24 hs.
                 </p>
               </div>
               <div className="space-y-3">
@@ -539,10 +543,10 @@ export default function Home() {
                   href="https://wa.me/5493885786946"
                   className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-eerie-black text-white font-semibold text-sm hover:bg-black active:scale-[0.98] transition-all duration-200"
                 >
-                  WhatsApp
+                  Agendar por WhatsApp
                   <ArrowRight className="w-4 h-4" />
                 </a>
-                <p className="text-[11px] text-brand-eerie-black/50 text-center">Efectivo · Transferencia · Débito/Crédito (Macro) · Planes de cuotas</p>
+                <p className="text-[11px] text-brand-eerie-black/50 text-center">Efectivo · Transferencia · Débito/Crédito · Planes de cuotas</p>
               </div>
             </motion.div>
           </div>

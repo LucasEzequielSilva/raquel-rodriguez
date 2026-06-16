@@ -19,7 +19,7 @@ interface ServiceCardProps {
 const defaultImages: Record<string, string> = {
   ortopedia: "/clinic/ortopedia.jpg",
   ortodoncia: "/clinic/ortodoncia.jpg",
-  alineadores: "/clinic/alineadores.jpg",
+  alineadores: "/aligners.jpeg",
   ninos: "/clinic/ninos.jpg",
   adultos: "/clinic/adultos.jpg",
   diagnostico: "/clinic/diagnostico-servicio.jpg",
