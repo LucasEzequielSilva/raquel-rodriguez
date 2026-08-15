@@ -14,12 +14,17 @@
       si el Dropbox que Lucas recibió el 15/8 ya cubre esto antes de seguir esperando.
 
 ## P1
-- [x] 2026-08-16: **`adultos.jpg`** — primer intento (paciente joven en escaneo intraoral)
-      reemplazado de nuevo por pedido de Lucas: quería alguien de tercera edad, no joven.
-      Foto final: señor mayor con lentes, sonrisa cálida (Unsplash, licencia libre). Se
-      descartó explícitamente generar con IA (Gemini/Nano Banana) — en un sitio de
-      odontología el riesgo de artefactos en dientes/sonrisa generados por IA es demasiado
-      alto justo donde más importa que se vea bien; se prefirió foto real verificada.
+- [x] 2026-08-16: **`adultos.jpg`** — 3 iteraciones en la misma sesión: (1) paciente joven en
+      escaneo intraoral → Lucas pidió tercera edad; (2) señor de +70 con lentes → Lucas dijo
+      que se fue al otro extremo ("terrible viejo"), quería ~50 años; (3) **final aplicada**:
+      hombre ~50-55, pelo canoso, sonrisa cálida, fondo gris neutro (Unsplash, licencia libre,
+      no premium). Se descartó explícitamente generar con IA (Gemini/Nano Banana) — en un
+      sitio de odontología el riesgo de artefactos en dientes/sonrisa generados por IA es
+      demasiado alto justo donde más importa que se vea bien; se prefirió foto real.
+      **Nota de proceso**: varios candidatos de Unsplash tenían alt-text auto-generado poco
+      confiable (no coincidía con el contenido visual real) y el grid mezcla fotos Unsplash+
+      (premium, de pago) entre los resultados "gratis" — verificar SIEMPRE el dominio
+      (`images.unsplash.com` = gratis, `plus.unsplash.com` = premium/pago) antes de usar una.
 - [ ] **`ninos.jpg`**: sigue siendo stock genérico (nena posando, estética lila IA) — no se
       encontró en Unsplash un reemplazo bueno con contexto de clínica en la búsqueda del 15/8
       (salían fotos de misión militar/otro país, o niños sin contexto odontológico). Necesita
