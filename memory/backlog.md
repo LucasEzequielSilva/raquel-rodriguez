@@ -14,16 +14,19 @@
       si el Dropbox que Lucas recibió el 15/8 ya cubre esto antes de seguir esperando.
 
 ## P1
-- [ ] **Cards de servicios sin foto real**: `ninos.jpg` y `adultos.jpg` (personas posando,
-      estética lila IA) siguen siendo stock genérico — no se encontró en Unsplash un
-      reemplazo bueno con contexto de clínica en la búsqueda del 15/8 (o eran fotos de
-      misión militar/otro país, o niños sin contexto odontológico). Necesitan foto real de
-      paciente/modelo o seguir buscando con más tiempo.
+- [x] 2026-08-15: **`adultos.jpg`** reemplazada por foto real (Unsplash, licencia libre) —
+      paciente adulta sonriendo durante escaneo intraoral 3D, clínico y moderno.
+- [ ] **`ninos.jpg`**: sigue siendo stock genérico (nena posando, estética lila IA) — no se
+      encontró en Unsplash un reemplazo bueno con contexto de clínica en la búsqueda del 15/8
+      (salían fotos de misión militar/otro país, o niños sin contexto odontológico). Necesita
+      foto real de paciente/modelo o seguir buscando con más tiempo.
 - [ ] **`ortopedia.jpg`**: sigue siendo el stock IA (dos aparatos removibles sobre tela lila).
-      La búsqueda de Unsplash solo devolvió más fotos de alineadores transparentes (redundante
-      con `alineadores`), no de aparatología funcional/expansor (que es lo que realmente
-      describe el copy — "guiamos el crecimiento de los maxilares en niños"). Pendiente buscar
-      con términos más específicos o esperar foto real.
+      Probadas 5 búsquedas distintas en Unsplash (hawley retainer, expansor, aparato removible,
+      dispositivo metálico, etc.) — todas devuelven o alineadores transparentes (redundante con
+      `alineadores`) o modelos de brackets (redundante con `ortodoncia`), nunca aparatología
+      funcional/expansor real (lo que describe el copy — "guiamos el crecimiento de los
+      maxilares en niños"). Es un objeto poco fotografiado en bancos de stock — más realista
+      esperar foto real de la clínica que seguir buscando acá.
 
 ## P3
 - [ ] Actualizar imágenes generales de la landing con las fotos nuevas de la sesión (aparte de
