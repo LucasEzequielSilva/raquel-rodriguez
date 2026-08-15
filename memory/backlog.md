@@ -14,8 +14,12 @@
       si el Dropbox que Lucas recibió el 15/8 ya cubre esto antes de seguir esperando.
 
 ## P1
-- [x] 2026-08-15: **`adultos.jpg`** reemplazada por foto real (Unsplash, licencia libre) —
-      paciente adulta sonriendo durante escaneo intraoral 3D, clínico y moderno.
+- [x] 2026-08-16: **`adultos.jpg`** — primer intento (paciente joven en escaneo intraoral)
+      reemplazado de nuevo por pedido de Lucas: quería alguien de tercera edad, no joven.
+      Foto final: señor mayor con lentes, sonrisa cálida (Unsplash, licencia libre). Se
+      descartó explícitamente generar con IA (Gemini/Nano Banana) — en un sitio de
+      odontología el riesgo de artefactos en dientes/sonrisa generados por IA es demasiado
+      alto justo donde más importa que se vea bien; se prefirió foto real verificada.
 - [ ] **`ninos.jpg`**: sigue siendo stock genérico (nena posando, estética lila IA) — no se
       encontró en Unsplash un reemplazo bueno con contexto de clínica en la búsqueda del 15/8
       (salían fotos de misión militar/otro país, o niños sin contexto odontológico). Necesita
