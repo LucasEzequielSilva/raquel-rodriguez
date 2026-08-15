@@ -14,19 +14,26 @@
       si el Dropbox que Lucas recibió el 15/8 ya cubre esto antes de seguir esperando.
 
 ## P1
-- [x] 2026-08-16: **`adultos.jpg`** — 4 iteraciones en la misma sesión: (1) paciente joven en
-      escaneo intraoral → Lucas pidió tercera edad; (2) señor de +70 con lentes → Lucas dijo
-      que se fue al otro extremo ("terrible viejo"), quería ~50 años; (3) hombre ~50-55 de piel
-      morena → Lucas pidió alguien de rasgos más europeos, abierto a que sea mujer; (4) **final
-      aplicada**: mujer ~50-55, pelo canoso corto, sonrisa amplia con dientes visibles, sweater
-      verde, ambiente cálido hogareño (Unsplash, licencia libre, no premium).
-      Se descartó explícitamente generar con IA (Gemini/Nano Banana) — en un sitio de
-      odontología el riesgo de artefactos en dientes/sonrisa generados por IA es demasiado
-      alto justo donde más importa que se vea bien; se prefirió foto real.
-      **Nota de proceso**: varios candidatos de Unsplash tenían alt-text auto-generado poco
-      confiable (no coincidía con el contenido visual real) y el grid mezcla fotos Unsplash+
-      (premium, de pago) entre los resultados "gratis" — verificar SIEMPRE el dominio
-      (`images.unsplash.com` = gratis, `plus.unsplash.com` = premium/pago) antes de usar una.
+- [x] 2026-08-16: **`adultos.jpg`** — 6 iteraciones en la misma sesión hasta cerrar (récord de
+      idas y vueltas de esta card): (1) paciente joven en escaneo intraoral → pidió tercera
+      edad; (2) señor +70 con lentes → "terrible viejo", quería ~50 años; (3) hombre ~50-55 de
+      piel morena → pidió rasgos más europeos, abierto a mujer; (4) mujer canosa sweater verde
+      → "no una vieja fea"; (5-6) Lucas terminó armándola él mismo con Gemini: le pasó una
+      foto de mujer + una foto real del consultorio con un prompt (armado por Claude) pidiendo
+      aplicarle el color grading/luz/branding visual del consultorio real a la foto de la
+      mujer sin cambiar su identidad ni generar artefactos en los dientes. **Resultado final
+      aplicado**: mujer con trenzas sentada en el sillón real del consultorio, sonrisa amplia
+      con dientes visibles, gloves+instrumental dental en cuadro, mismo grano de luz/madera
+      que el resto de las fotos reales del sitio — coherencia visual perfecta con la marca.
+      **Lección de esta sesión completa**: para fotos de "personas siendo atendidas EN el
+      consultorio" (vs. solo objetos/equipos), generar con IA a partir de una foto real del
+      lugar da mejor resultado de branding que buscar stock genérico — el stock nunca va a
+      mostrar el sillón/pared/luz reales de Raquel. Reservar esta técnica (foto real + IA con
+      prompt de matching de branding) para `ninos.jpg` también si Unsplash sigue sin dar.
+      **Nota de proceso Unsplash** (sigue aplicando para futuras búsquedas): alt-text
+      auto-generado poco confiable + el grid mezcla fotos Unsplash+ premium entre resultados
+      "gratis" — verificar SIEMPRE el dominio (`images.unsplash.com` = gratis,
+      `plus.unsplash.com` = premium/pago) antes de usar una.
 - [ ] **`ninos.jpg`**: sigue siendo stock genérico (nena posando, estética lila IA) — no se
       encontró en Unsplash un reemplazo bueno con contexto de clínica en la búsqueda del 15/8
       (salían fotos de misión militar/otro país, o niños sin contexto odontológico). Necesita
