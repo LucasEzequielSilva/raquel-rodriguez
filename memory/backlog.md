@@ -13,6 +13,18 @@
       material real de la clínica — Belén mandó 1 sola foto (congreso) hasta el 15/8. Revisar
       si el Dropbox que Lucas recibió el 15/8 ya cubre esto antes de seguir esperando.
 
+## P1
+- [ ] **Cards de servicios sin foto real**: `ninos.jpg` y `adultos.jpg` (personas posando,
+      estética lila IA) siguen siendo stock genérico — no se encontró en Unsplash un
+      reemplazo bueno con contexto de clínica en la búsqueda del 15/8 (o eran fotos de
+      misión militar/otro país, o niños sin contexto odontológico). Necesitan foto real de
+      paciente/modelo o seguir buscando con más tiempo.
+- [ ] **`ortopedia.jpg`**: sigue siendo el stock IA (dos aparatos removibles sobre tela lila).
+      La búsqueda de Unsplash solo devolvió más fotos de alineadores transparentes (redundante
+      con `alineadores`), no de aparatología funcional/expansor (que es lo que realmente
+      describe el copy — "guiamos el crecimiento de los maxilares en niños"). Pendiente buscar
+      con términos más específicos o esperar foto real.
+
 ## P3
 - [ ] Actualizar imágenes generales de la landing con las fotos nuevas de la sesión (aparte de
       las secciones específicas de arriba) — pedido genérico, sin spec puntual todavía.
@@ -35,3 +47,11 @@
       "diagnóstico" que las tomas solo del sillón). **Ninguna de las 6 fotos muestra
       literalmente el escáner 3D/radiografías/cefalometría** que menciona el copy — si Raquel
       quiere esa imagen específica, hace falta una toma nueva del equipo puntual.
+- [x] 2026-08-15: Cards "Ortodoncia" y "Alineadores Invisibles" — reemplazadas las fotos IA/stock
+      (moldes sobre tela lila / mano con uñas pintadas) por fotos reales de banco libre
+      (Unsplash, licencia gratuita comercial sin atribución) elegidas para calzar con la
+      composición original: `ortodoncia.jpg` → dos modelos dentales lado a lado (uno con
+      alineador, uno con brackets); `aligners.jpeg` → persona sonriendo colocándose un
+      alineador. Pedido de Lucas (dijo recordar que Raquel las mencionó en la call, no está
+      registrado textualmente en la transcripción que se guardó, pero las fotos SÍ eran stock
+      genérico igual así que el cambio aplica de todas formas).
