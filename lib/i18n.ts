@@ -227,8 +227,8 @@ export const translations = {
     firstVisit: {
       title: "Cómo es la primer consulta",
       steps: [
-        { visit: "1ª visita", title: "Evaluación clínica", description: "Realizamos una historia clínica completa y evaluamos antecedentes genéticos, la mordida, la posición de los elementos dentarios, la cara y la postura. Acá indicamos los estudios necesarios." },
-        { visit: "2ª visita", title: "Estudios complementarios", description: "Fotografías, escaneo intraoral y radiografías si son necesarias." },
+        { visit: "1ª visita", title: "Evaluación clínica", description: "Realizamos una historia clínica completa y evaluamos antecedentes, mordida, posición de los dientes, cara y postura. Planificamos los estudios necesarios para tu diagnóstico: escaneo 3D, radiografías y análisis cefalométrico según tu caso." },
+        { visit: "2ª visita", title: "Estudios complementarios", description: "Reunimos fotografías, escaneo intraoral y radiografías para completar el diagnóstico. Cuando el caso lo requiere, incorporamos una tomografía Cone Beam 3D." },
         { visit: "3ª visita", title: "Diagnóstico, explicación y plan", description: "Te explicamos el diagnóstico personalizado, las opciones de tratamiento y entregamos el plan con presupuesto adaptado a tus necesidades." },
       ],
     },
@@ -312,12 +312,15 @@ export const translations = {
           title: "Más de 15 Años de Experiencia",
           description: "Formación continua y participación en congresos internacionales para incorporar las técnicas más actualizadas.",
         },
-        results: {
-          title: "Resultados Comprobados",
-          description:
-            "La confianza de nuestros pacientes y sus resultados reflejan nuestro compromiso con la excelencia clínica.",
-        },
       },
+    },
+    caseResults: {
+      label: "Resultados comprobados",
+      title: "Casos reales de pacientes",
+      description: "La confianza de nuestros pacientes y sus resultados reflejan nuestro compromiso con la excelencia clínica.",
+      before: "Antes",
+      after: "Después",
+      caption: "Tratamiento de ortodoncia con seguimiento con tecnología 3D, desde el diagnóstico inicial hasta el resultado final.",
     },
     servicesPage: {
       hero: {
@@ -551,15 +554,44 @@ export const translations = {
         ],
       },
       emergencies: {
-        title: "Urgencias Frecuentes",
+        title: "Urgencias Frecuentes con Brackets y Aparatología",
         items: [
-          { title: "Se despegó un bracket", description: "Cubrí con cera si molesta. Si no genera molestia, podés esperar hasta tu próximo turno. Contactanos para que evaluemos si es necesario adelantar la cita." },
-          { title: "Pincha el arco", description: "Cubrí la zona con cera de ortodoncia. Si la molestia persiste, contactanos para resolverlo lo antes posible." },
-          { title: "Perdí un alineador", description: "Usá el alineador anterior hasta que nos contactes. Te indicaremos si pasar al siguiente o reponer el perdido." },
-          { title: "El alineador no adapta", description: "No fuerces la colocación. Contactanos para evaluar si es necesario un ajuste." },
-          { title: "Se rompió el aparato removible", description: "No intentes repararlo. Guardá las partes y contactanos para evaluar la situación." },
-          { title: "Olvidé usar el aparato varios días", description: "Retomá el uso lo antes posible y contactanos para evaluar si es necesario ajustar el plan de tratamiento." },
-          { title: "Molestia en microimplante", description: "Si hay inflamación o molestia persistente, contactanos. Mantené la zona limpia con cepillado suave." },
+          {
+            title: "Alambre que se sale de las muelas o tubos",
+            description: "Es común en etapas iniciales cuando el alambre es flexible. Con una pinza de depilar limpia o el dedo, intentá volver a introducirlo en el tubo de la muela. Si no podés o continúa pinchando, colocá una bolita de cera de ortodoncia cubriendo el extremo y contactanos.",
+            video: "/videos/urgencias/alambre-sale-muelas.mp4"
+          },
+          {
+            title: "Ligadura metálica o alambre que pincha",
+            description: "A veces la pequeña ligadura que sostiene el alambre en el bracket se desplaza hacia afuera. Con la goma trasera de un lápiz limpia o el mango de un hisopo, empujá suavemente la puntita hacia adentro del bracket. Si aún raspa la mejilla, cubrila con cera de ortodoncia.",
+            video: "/videos/urgencias/ligadura-alambre-pincha.mp4"
+          },
+          {
+            title: "Alambre que se desliza hacia un lado",
+            description: "Al masticar, el arco puede correrse hacia la derecha o izquierda y pinchar al final. Con una pinza de depilar, tomá el alambre entre dos brackets y deslizalo con cuidado en sentido contrario para volver a centrarlo. Colocá cera de alivio si persiste.",
+            video: "/videos/urgencias/alambre-desliza-lado.mp4"
+          },
+          {
+            title: "Alambre pincha adelante / se salió la protección",
+            description: "Si se salió el tubito de protección o el alambre pincha en la zona frontal o lateral, cubrí de inmediato la zona con una porción generosa de cera de ortodoncia seca para frenar la fricción y avisanos por WhatsApp.",
+            video: "/videos/urgencias/alambre-pincha-adelante.mp4"
+          },
+          {
+            title: "Se despegó un bracket",
+            description: "Cubrí con cera si molesta o gira sobre el alambre. Si no genera dolor, podés esperar hasta tu próximo turno. Contactanos para que evaluemos si conviene cementarlo antes.",
+          },
+          {
+            title: "Perdí un alineador",
+            description: "Usá el alineador anterior hasta que nos contactes para no perder el avance conseguido. Te indicaremos si pasar al siguiente o reponer el extraviado.",
+          },
+          {
+            title: "El alineador no adapta correctamente",
+            description: "No fuerces la colocación. Usá los mordillos/chewies en la zona y contactanos si no calza en su totalidad para evaluar un ajuste.",
+          },
+          {
+            title: "Se rompió el aparato removible",
+            description: "No intentes pegarlo con pegamentos comerciales. Guardá todas las partes en su cajita y contactanos de inmediato.",
+          },
         ],
       },
       adherence: {

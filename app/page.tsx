@@ -90,19 +90,18 @@ export default function Home() {
   }, [])
 
   const services = [
+    { title: t("services.items.ninos.title"), description: t("services.items.ninos.description"), icon: <UserRound className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ninos" },
+    { title: t("services.items.alineadores.title"), description: t("services.items.alineadores.description"), icon: <ScanFace className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.alineadores" },
+    { title: t("services.items.adultos.title"), description: t("services.items.adultos.description"), icon: <Users className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.adultos" },
     { title: t("services.items.ortopedia.title"), description: t("services.items.ortopedia.description"), icon: <Baby className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ortopedia" },
     { title: t("services.items.ortodoncia.title"), description: t("services.items.ortodoncia.description"), icon: <Smile className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ortodoncia" },
-    { title: t("services.items.alineadores.title"), description: t("services.items.alineadores.description"), icon: <ScanFace className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.alineadores" },
-    { title: t("services.items.ninos.title"), description: t("services.items.ninos.description"), icon: <UserRound className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ninos" },
-    { title: t("services.items.adultos.title"), description: t("services.items.adultos.description"), icon: <Users className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.adultos" },
-    { title: t("services.items.diagnostico.title"), description: t("services.items.diagnostico.description"), icon: <ClipboardCheck className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.diagnostico" },
   ]
 
   const features = [
-    { icon: Search, label: t("about.features.diagnosis"), image: "/clinic/diagnostico.jpg" },
-    { icon: Target, label: t("about.features.planning"), image: "/clinic/planificacion.jpg" },
-    { icon: GraduationCap, label: t("about.features.certified"), image: "/clinic/formacion.jpg" },
-    { icon: HeartHandshake, label: t("about.features.followup"), image: "/clinic/seguimiento.jpg" },
+    { icon: Search, label: t("about.features.diagnosis"), image: "/clinic/diagnostico-mordida-radiografias.png" },
+    { icon: Target, label: t("about.features.planning"), image: "/clinic/diagnostico-explicacion-modelo-v3.png" },
+    { icon: GraduationCap, label: t("about.features.certified"), image: "/clinic/certificado-alado.png" },
+    { icon: HeartHandshake, label: t("about.features.followup"), image: "/clinic/consulta-real.png" },
   ]
 
   const forWhomItems = t("forWhom.items") as unknown as string[]
@@ -110,11 +109,9 @@ export default function Home() {
   const firstVisitSteps = t("firstVisit.steps") as unknown as { visit: string; title: string; description: string }[]
 
   const firstVisitImages = [
-    "/clinic/paso-1-evaluacion.png",
-    "/clinic/paso-2-estudios.png",
-    "/clinic/paso-3-diagnostico.png",
-    "/clinic/paso-4-explicacion.png",
-    "/clinic/paso-5-plan.png",
+    "/clinic/evaluacion-real.png",
+    "/clinic/cone-beam-ilustracion.png",
+    "/clinic/consulta-real.png",
   ]
 
   return (
@@ -148,27 +145,21 @@ export default function Home() {
               {new Date().toLocaleString("es-ES", { month: "long" }).toUpperCase()}{" "}
               {t("hero.open")}
             </span>
-            <a
-              href="https://share.google/eRdYtwnM2E5wfeyc7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/25 hover:bg-white/15 hover:border-white/40 transition-all duration-200 group"
-              aria-label="5 estrellas en Google"
-            >
-              <GoogleG className="w-4 h-4" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-sm">
+              <GoogleG className="w-3.5 h-3.5" />
               <span className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
                 ))}
               </span>
-              <span className="text-[12px] text-white/90 font-semibold">5.0</span>
-            </a>
+              <span className="text-xs font-semibold text-white ml-0.5">5.0</span>
+            </div>
           </div>
 
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
             <div className="max-w-2xl">
-              <h1 className="hero-title opacity-0 text-[clamp(2.25rem,5vw,4rem)] font-medium tracking-tighter leading-[1.05] text-white mb-5">
-                <HighlightMark>Ortodoncia</HighlightMark> y <HighlightMark>Ortopedia Facial</HighlightMark> para todas las edades.
+              <h1 className="hero-title opacity-0 text-[clamp(2rem,4.2vw,3.25rem)] font-medium tracking-tight leading-[1.1] text-white mb-5">
+                Ortodoncia y Ortopedia Facial para todas las edades.
               </h1>
               <p className="hero-sub opacity-0 text-white/90 max-w-xl text-xl leading-[1.6]">
                 {t("hero.subtitle")}
@@ -237,11 +228,13 @@ export default function Home() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: i * 0.08, ease: [0.25, 1, 0.5, 1] }}
                 >
-                  <img src={image} alt={label} loading="lazy" width={600} height={600} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                  <img src={image} alt={label} loading="lazy" width={600} height={600} className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
                   <div className="relative h-full p-5 md:p-6 flex flex-col justify-between">
                     <Icon className="w-7 h-7 text-white/80" />
-                    <p className="text-[13px] font-medium text-white leading-snug">{label}</p>
+                    {i === 2 ? (
+                      <a href={image} target="_blank" rel="noopener noreferrer" className="text-[13px] font-medium text-white leading-snug underline underline-offset-4 after:absolute after:inset-0" aria-label="Formación continua: abrir certificado ALADO">{label}</a>
+                    ) : <p className="text-[13px] font-medium text-white leading-snug">{label}</p>}
                   </div>
                 </motion.div>
               ))}
@@ -418,7 +411,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
               >
                 {/* Visual panel */}
-                <div className="relative h-44 flex items-center justify-center border-b border-brand-pale-lavender/30 overflow-hidden">
+                <div className="relative aspect-square flex items-center justify-center border-b border-brand-pale-lavender/30 overflow-hidden">
                   <div
                     className="absolute inset-0"
                     style={{ background: "radial-gradient(circle at 50% 45%, rgba(217,199,255,0.38), transparent 70%)" }}
@@ -428,11 +421,11 @@ export default function Home() {
                   </span>
                   <img
                     src={firstVisitImages[i]}
-                    alt=""
-                    aria-hidden="true"
-                    className="relative w-28 h-28 object-contain select-none transition-transform duration-300 group-hover:scale-105"
+                    alt={["Raquel realizando una evaluación clínica", "Ilustración de una tomografía Cone Beam 3D", "Raquel en consulta con una paciente y su madre"][i]}
+                    className="absolute inset-0 w-full h-full object-cover select-none transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
+                  {i === 1 && <span className="absolute bottom-3 right-3 rounded bg-black/65 px-2 py-1 text-xs text-white">Imagen ilustrativa</span>}
                 </div>
 
                 {/* Body */}
@@ -450,10 +443,58 @@ export default function Home() {
       {/* ═══ WHY CHOOSE US ═══ */}
       <HorizontalScroll />
 
+      {/* ═══ CASOS REALES — Antes / Después ═══ */}
+      <section className="py-28 md:py-36 bg-[#F0F2F5]">
+        <div className="container mx-auto px-4 md:px-8">
+          <motion.div className="max-w-2xl mb-12" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
+            <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
+              {t("caseResults.label")}
+            </p>
+            <h2 className="text-2xl md:text-[2rem] leading-[1.15] font-medium mb-5 text-[#1A1A20]">
+              {t("caseResults.title")}
+            </h2>
+            <p className="text-lg leading-[1.75] text-[#6B6B76]">
+              {t("caseResults.description")}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {["inicio", "final"].map((stage, i) => (
+              <motion.a
+                key={stage}
+                href={`/clinic/caso-${stage}.png`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden bg-white border border-brand-pale-lavender/40 shadow-[0_4px_20px_rgba(217,199,255,0.18)] hover:shadow-[0_16px_40px_rgba(217,199,255,0.4)] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-action"
+                aria-label={`Ver radiografía de ${stage === "inicio" ? "antes" : "después"} del caso clínico`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
+              >
+                <img
+                  src={`/clinic/caso-${stage}.png`}
+                  alt={`Caso clínico: ${stage === "inicio" ? t("caseResults.before") : t("caseResults.after")}`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-brand-eerie-black/80 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wide">
+                  {stage === "inicio" ? t("caseResults.before") : t("caseResults.after")}
+                </span>
+              </motion.a>
+            ))}
+          </div>
+
+          <p className="max-w-2xl mt-6 text-base text-brand-rhythm leading-relaxed">
+            {t("caseResults.caption")}
+          </p>
+        </div>
+      </section>
+
       {/* ═══ TESTIMONIOS ═══ */}
       <section className="py-28 md:py-36 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div className="max-w-xl mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
+          <motion.div className="max-w-xl mb-8" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeIn}>
             <p className="text-sm font-medium tracking-widest uppercase mb-4 text-brand-rhythm">
               Testimonios
             </p>
@@ -461,6 +502,44 @@ export default function Home() {
               Lo que dicen nuestros pacientes
             </h2>
           </motion.div>
+
+          {/* Social proof band */}
+          <motion.div
+            className="flex flex-col sm:flex-row sm:items-center gap-5 mb-12"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex -space-x-3">
+              {["F", "V", "J", "L", "C"].map((ini, i) => (
+                <div
+                  key={i}
+                  className="w-11 h-11 rounded-full bg-gradient-to-br from-brand-lavender to-brand-pale-lavender border-2 border-white flex items-center justify-center text-xs font-bold text-brand-eerie-black shadow-[0_2px_8px_rgba(217,199,255,0.4)]"
+                >
+                  {ini}
+                </div>
+              ))}
+              <div className="w-11 h-11 rounded-full bg-white border-2 border-white ring-1 ring-brand-pale-lavender flex items-center justify-center text-xs font-bold text-brand-action shadow-[0_2px_8px_rgba(217,199,255,0.4)]">
+                +
+              </div>
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-brand-eerie-black">
+                Más de <span className="text-brand-action">500</span> personas volvieron a sonreír
+              </p>
+              <div className="flex items-center gap-2 mt-1.5">
+                <GoogleG className="w-4 h-4" />
+                <span className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  ))}
+                </span>
+                <span className="text-sm font-medium text-brand-rhythm">5.0 en Google</span>
+              </div>
+            </div>
+          </motion.div>
+
           <TestimonialsCarousel />
         </div>
       </section>
@@ -583,4 +662,3 @@ export default function Home() {
     </div>
   )
 }
-

@@ -41,7 +41,7 @@ export default function PacientesPage() {
   const normalItems = t("patients.normalVsConsult.normal.items") as unknown as string[]
   const consultItems = t("patients.normalVsConsult.consult.items") as unknown as string[]
   const hygieneItems = t("patients.hygiene.items") as unknown as { title: string; description: string }[]
-  const emergencyItems = t("patients.emergencies.items") as unknown as { title: string; description: string }[]
+  const emergencyItems = t("patients.emergencies.items") as unknown as { title: string; description: string; video?: string }[]
 
   return (
     <div className="min-h-screen bg-[#F5F7FA]">
@@ -337,21 +337,41 @@ export default function PacientesPage() {
               </div>
             </div>
           </motion.div>
-          <Accordion type="single" collapsible className="space-y-2">
-            {emergencyItems.map((item: { title: string; description: string }, i: number) => (
+          <Accordion type="single" collapsible className="space-y-3">
+            {emergencyItems.map((item, i) => (
               <AccordionItem
                 key={i}
                 value={`emergency-${i}`}
-                className="rounded-xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-red-200 data-[state=open]:shadow-[0_2px_8px_rgba(239,68,68,0.06)]"
+                className="rounded-2xl px-6 py-1 bg-white border border-[#E0E2E8] transition-all duration-200 data-[state=open]:border-red-200 data-[state=open]:shadow-[0_4px_16px_rgba(239,68,68,0.08)]"
               >
-                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-base font-medium">
-                  <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
-                    {item.title}
-                  </span>
+                <AccordionTrigger className="text-[#1A1A20] hover:text-[#6B6B76] text-left transition-colors duration-200 text-base font-medium py-4">
+                  <div className="flex items-center gap-3 pr-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400 flex-shrink-0" />
+                    <span className="flex-1">{item.title}</span>
+                    {item.video && (
+                      <span className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200 flex-shrink-0">
+                        Video explicativo
+                      </span>
+                    )}
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-[#8A8A94] text-base leading-relaxed">
-                  {item.description}
+                <AccordionContent className="text-[#6B6B76] text-base leading-relaxed pb-5 pt-1">
+                  <p className="mb-4">{item.description}</p>
+                  {item.video && (
+                    <div className="mt-3 overflow-hidden rounded-2xl border border-red-100 bg-brand-eerie-black max-w-sm shadow-md">
+                      <video
+                        src={item.video}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="w-full aspect-[9/16] max-h-[500px] object-cover bg-black"
+                      />
+                      <div className="p-3 bg-red-50/80 text-xs text-red-800 flex items-center gap-2">
+                        <AlertTriangle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                        <span>Mirá la explicación paso a paso de la Dra. Raquel Rodríguez.</span>
+                      </div>
+                    </div>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
