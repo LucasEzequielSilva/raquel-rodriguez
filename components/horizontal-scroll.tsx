@@ -4,12 +4,12 @@ import { useRef, useEffect } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useTranslations } from "@/lib/i18n"
-import { Search, Target, GraduationCap } from "@/components/icons"
+import { Sparkles, ClipboardCheck, GraduationCap } from "@/components/icons"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const slideIcons = [Search, Target, GraduationCap]
-const slideImages = ["/clinic/planificacion-digital.png", "/clinic/planificacion-escaner.png", "/clinic/planificacion-profesional.png"]
+const slideIcons = [Sparkles, ClipboardCheck, GraduationCap]
+const slideImages = ["/clinic/alineadores.jpg", "/clinic/formacion.jpg", "/clinic/planificacion-profesional.png"]
 
 export function HorizontalScroll() {
   const { t } = useTranslations()
@@ -18,8 +18,8 @@ export function HorizontalScroll() {
   const progressRef = useRef<HTMLDivElement>(null)
 
   const slides = [
-    { titleKey: "whyChooseUs.slides.diagnosis.title", descriptionKey: "whyChooseUs.slides.diagnosis.description" },
-    { titleKey: "whyChooseUs.slides.planning.title", descriptionKey: "whyChooseUs.slides.planning.description" },
+    { titleKey: "whyChooseUs.slides.brands.title", descriptionKey: "whyChooseUs.slides.brands.description" },
+    { titleKey: "whyChooseUs.slides.allInOne.title", descriptionKey: "whyChooseUs.slides.allInOne.description" },
     { titleKey: "whyChooseUs.slides.experience.title", descriptionKey: "whyChooseUs.slides.experience.description" },
   ]
 

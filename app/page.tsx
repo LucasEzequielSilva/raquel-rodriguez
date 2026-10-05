@@ -90,11 +90,11 @@ export default function Home() {
   }, [])
 
   const services = [
+    { title: t("services.items.ortopedia.title"), description: t("services.items.ortopedia.description"), icon: <Baby className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ortopedia" },
+    { title: t("services.items.ortodoncia.title"), description: t("services.items.ortodoncia.description"), icon: <Smile className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ortodoncia" },
     { title: t("services.items.ninos.title"), description: t("services.items.ninos.description"), icon: <UserRound className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ninos" },
     { title: t("services.items.alineadores.title"), description: t("services.items.alineadores.description"), icon: <ScanFace className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.alineadores" },
     { title: t("services.items.adultos.title"), description: t("services.items.adultos.description"), icon: <Users className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.adultos" },
-    { title: t("services.items.ortopedia.title"), description: t("services.items.ortopedia.description"), icon: <Baby className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ortopedia" },
-    { title: t("services.items.ortodoncia.title"), description: t("services.items.ortodoncia.description"), icon: <Smile className="w-5 h-5" />, href: "/servicios", translationKey: "services.items.ortodoncia" },
   ]
 
   const features = [

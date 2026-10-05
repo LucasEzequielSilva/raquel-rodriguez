@@ -300,13 +300,13 @@ export const translations = {
     whyChooseUs: {
       title: "Por qué elegirnos",
       slides: {
-        diagnosis: {
-          title: "Diagnóstico Personalizado",
-          description: "Cada paciente es único. Realizamos un diagnóstico preciso con tecnología actual para diseñar el plan más adecuado.",
+        brands: {
+          title: "Las Mejores Marcas de Alineadores",
+          description: "Trabajamos con Invisalign, ASIRI y Keep Smiling, eligiendo en cada caso la opción que mejor se adapta a tu tratamiento.",
         },
-        planning: {
-          title: "Planificación Precisa",
-          description: "Utilizamos herramientas digitales y análisis cefalométrico para planificar cada movimiento con exactitud.",
+        allInOne: {
+          title: "Todo en un Mismo Lugar",
+          description: "Ortodoncia convencional, ortopedia funcional y alineadores transparentes: evaluamos juntos cuál es el mejor camino para tu caso.",
         },
         experience: {
           title: "Más de 15 Años de Experiencia",
