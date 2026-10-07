@@ -308,9 +308,9 @@ export const translations = {
           title: "Todo en un Mismo Lugar",
           description: "Ortodoncia convencional, ortopedia funcional y alineadores transparentes: evaluamos juntos cuál es el mejor camino para tu caso.",
         },
-        experience: {
-          title: "Más de 15 Años de Experiencia",
-          description: "Formación continua y participación en congresos internacionales para incorporar las técnicas más actualizadas.",
+        innovation: {
+          title: "Simulación 3D de tu Sonrisa",
+          description: "Vas a ver cómo se vería tu sonrisa antes de empezar, con tecnología de simulación digital de última generación.",
         },
       },
     },
